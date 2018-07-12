@@ -5,7 +5,7 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 header {
-  padding: 40px 0 10px 0;
+  padding: 40px 0 0 0;
 }
 section {
   margin: 20px auto;
@@ -36,6 +36,7 @@ footer h2 {
 }
 h3 {
   text-transform: uppercase;
+  margin-top: 0;
 }
 p {
   font-size: .8em;
@@ -48,7 +49,7 @@ ul {
 li {
   display: inline-block;
   float: left;
-  margin-right: 15px;
+  margin: 0 20px;
 }
 li.selected {
   font-weight: bold;
@@ -62,7 +63,7 @@ li.selected {
   overflow: auto;
   padding: 10px;
   margin: 20px auto;
-  width: 580px;
+  width: 560px;
   height: 400px;
 }
 .thumbnail {
@@ -70,7 +71,7 @@ li.selected {
   float: left;
   width: 80px;
   height: 80px;
-  margin: 20px 10px;
+  margin: 20px;
 }
 .thumbnail img {
   width: 80px;
