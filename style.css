@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,700');
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+header {
+  padding: 40px 0 10px 0;
+}
+section {
+  margin: 20px auto;
+  width: 600px;
+}
+footer {
+  color: #fff;
+  background-color: #000;
+  width: 100%;
+  padding: 60px 0;
+  min-height: 140px;
+  margin-top: 80px;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-top: 54px;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+h2 {
+  letter-spacing: 4px;
+}
+footer h2 {
+  display: inline;
+  font-weight: normal;
+  vertical-align: super;
+}
+h3 {
+  text-transform: uppercase;
+}
+p {
+  font-size: .8em;
+}
+ul {
+  text-transform: uppercase;
+  list-style-type: none;
+  padding: 20px;
+}
+li {
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+}
+li.selected {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+.thumbnail-gallery {
+  border: 2px solid #000;
+  overflow: auto;
+  padding: 10px;
+  margin: 20px auto;
+  width: 580px;
+  height: 400px;
+}
+.thumbnail {
+  border: 2px solid #000;
+  float: left;
+  width: 80px;
+  height: 80px;
+  margin: 20px 10px;
+}
+.thumbnail img {
+  width: 80px;
+  height: 80px;
+}
+.clear {
+  clear: left;
+}
+.light {
+  font-weight: 300;
+}
+.right {
+  text-align: right;
+}
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {transform:rotate(0deg);}
+  to {transform:rotate(360deg);}
+}
+.spin {
+  animation: spin 2500ms linear infinite;
+  margin-left: 30px;
+  width: 30px;
+}
