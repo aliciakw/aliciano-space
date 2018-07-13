@@ -1,4 +1,4 @@
-{
+define({
   "interesting": [
     {
       "filename": "2018-Walk-Home.JPG",
@@ -201,7 +201,7 @@
       "subtitle": "",
       "date": "2017",
       "dimensions": "9\" x 9\""
-    }
+    },
     {
       "filename": "2017-figure-rightside-back.JPG",
       "thumb-filename": "thumb_figure-rightside-back.png",
@@ -211,4 +211,4 @@
       "dimensions": "9\" x 9\" (two panels)"
     }
   ]
-}
+});
