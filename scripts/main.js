@@ -7,17 +7,19 @@ requirejs.config({
     }
 });
 
-requirejs(['jquery', 'handlebars', 'text!template/sandbox.html'],
-function   ($, Handlebars, sandboxTemplate) {
-    //jQuery, canvas and the app/sub module are all
-    //loaded and can be used here now.
+requirejs(['jquery', 'handlebars', 'text!template/thumbnail.html'],
+function   ($, Handlebars, thumbnailTemplate) {
     console.log('we have what\'s required');
     //$('img').hide();
 
-
     // views
-    var context = { title: 'Black Star', body: '.......'};
-    var template = Handlebars.compile(sandboxTemplate);
+    var s3_bucket = 'https://s3.amazonaws.com/alicia-no-portfolio/';
+    var thumbnail_dirname = 'thumbnails/';
+    var filename = 'thumb-grandparents.png';
+    var context = {
+      img_uri: s3_bucket + thumbnail_dirname + filename
+    };
+    var template = Handlebars.compile(thumbnailTemplate);
     $('#sandbox').html(template(context));
 
 });
