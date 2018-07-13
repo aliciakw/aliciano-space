@@ -1,5 +1,5 @@
 {
-  "interesting": [
+  "interesting-stuff": [
     {
       "filename": "2018-Walk-Home.JPG",
       "thumb": "thumb_walk-home.png",
@@ -97,7 +97,7 @@
       "dimensions": "16\" x 20\""
     }
   ],
-  "normal": [
+  "normal-stuff": [
     {
       "filename": "2018-amy.JPG",
       "thumb": "thumb_billy.png",
@@ -202,6 +202,16 @@
       "date": "2017",
       "dimensions": "9\" x 9\""
     },
+    {
+      "filename": "2017-figure-rightside-back.JPG",
+      "thumb": "thumb_figure-rightside-back.png",
+      "title": "Figure from back, Figure from right side",
+      "subtitle": "",
+      "date": "2017",
+      "dimensions": "9\" x 9\" (two panels)"
+    }
+  ],
+  "just-4-fun": [
     {
       "filename": "2017-figure-rightside-back.JPG",
       "thumb": "thumb_figure-rightside-back.png",
