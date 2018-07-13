@@ -3,16 +3,24 @@ requirejs.config({
     paths: {
         app: '../app',
         data: '../data',
-        text : '../lib/text', //text is required
-        json : '../lib/json' //alias to plugin
+        //template: '../template',
+        text : '../lib/text'
     }
 });
 
-requirejs(['jquery', 'handlebars', 'data/gallery'],
-function   ($, handlebars, data) {
+requirejs(['jquery', 'handlebars'],
+function   ($, Handlebars, data) {
     //jQuery, canvas and the app/sub module are all
     //loaded and can be used here now.
     console.log('we have what\'s required');
-    $('img').hide();
-    console.log(data);
+    // console.log(text)
+    //$('img').hide();
+
+
+    // views
+    // var context = { title: 'Black Star', body: '.......'};
+    // var source   = document.getElementById("entry-template").innerHTML;
+    // var template = Handlebars.compile(source);
+    // $('#sandbox').html(template(context));
+
 });
