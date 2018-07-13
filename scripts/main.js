@@ -35,26 +35,20 @@ requirejs([
       $('#gallery-nav-content').html(navTemplateCompiled({
         config: getCategoryNavConfig(currentCategory)
       }));
-
       $('#thumbnail-gallery-content').html(thumbnailTemplateCompiled({
         title: currentCategory,
         paintings: data[currentCategory]
       }));
-      console.log('render is done');
+
+      // a lil crude -_-
+      $('li.nav-category').click((event) => {
+        var targetId = $(event.target).attr('id');
+        var newCategoryName = targetId.replace('gallery-category-', '');
+        changeCurrentCategory(newCategoryName);
+        render(newCategoryName);
+      });
     }
 
     // initial render
     render(categoryNames[0]);
-
-
-    // a lil crude -__-
-    $('li.nav-category').click((event) => {
-      console.log('i see....');
-      var targetId = $(event.target).attr('id');
-      var newCategoryName = targetId.replace('gallery-category-', '');
-      changeCurrentCategory(newCategoryName);
-      //render(newCategoryName);
-    });
-
-
 });
