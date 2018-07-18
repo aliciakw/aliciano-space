@@ -1,7 +1,7 @@
 <div>
   {{#each paintings}}
     {{#if thumb}}
-      <div class="thumbnail">
+      <div class="thumbnail" id="gallery-img-{{slug}}">
         <img src="https://s3.amazonaws.com/alicia-no-portfolio/thumbnails/{{thumb}}" />
       </div>
     {{/if}}

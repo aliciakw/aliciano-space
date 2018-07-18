@@ -29,6 +29,8 @@ requirejs([
       currentCategory = categoryName;
     }
 
+    Handlebars.registerHelper('spacify', (text) => text.replace(/\-/g, ' '));
+
     function render(currentCategory) {
       var navTemplateCompiled = Handlebars.compile(navTemplate);
       var thumbnailTemplateCompiled = Handlebars.compile(thumbnailTemplate);
