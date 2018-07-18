@@ -13,44 +13,26 @@ requirejs([
   'text!data/gallery.json',
   'text!template/gallery-nav.html',
   'text!template/thumbnail-gallery.html',
-
+  'app/gallery'
 ],
-($, Handlebars, rawData, navTemplate, thumbnailTemplate) => {
+($, Handlebars, rawData, navTemplate, thumbnailTemplate, gallery) => {
     var data = JSON.parse(rawData);
     var categoryNames = Object.keys(data);
-
-    function getCategoryNavConfig(newCurrentCategory) {
-      return categoryNames.map((categoryName) => ({
-        name: categoryName,
-        selected: categoryName === newCurrentCategory
-      }));
-    }
-    function changeCurrentCategory(categoryName) {
-      currentCategory = categoryName;
-    }
-
     Handlebars.registerHelper('spacify', (text) => text.replace(/\-/g, ' '));
 
     function render(currentCategory) {
-      var navTemplateCompiled = Handlebars.compile(navTemplate);
-      var thumbnailTemplateCompiled = Handlebars.compile(thumbnailTemplate);
-      $('#gallery-nav-content').html(navTemplateCompiled({
-        config: getCategoryNavConfig(currentCategory)
-      }));
-      $('#thumbnail-gallery-content').html(thumbnailTemplateCompiled({
-        title: currentCategory,
-        paintings: data[currentCategory]
-      }));
+      gallery.renderNavContent($, Handlebars, navTemplate, categoryNames, currentCategory);
+      gallery.renderThumbnailGallery($, Handlebars, thumbnailTemplate, data, currentCategory);
 
       // a lil crude -_-
       $('li.nav-category').click((event) => {
         var targetId = $(event.target).attr('id');
         var newCategoryName = targetId.replace('gallery-category-', '');
-        changeCurrentCategory(newCategoryName);
         render(newCategoryName);
       });
     }
 
     // initial render
     render(categoryNames[0]);
+
 });
