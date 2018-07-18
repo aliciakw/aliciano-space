@@ -1,8 +1,8 @@
 <div>
   {{#each paintings}}
     {{#if thumb}}
-      <div class="thumbnail" id="gallery-img-{{slug}}">
-        <img src="img/thumbnails/{{thumb}}" />
+      <div class="thumbnail">
+        <img src="img/thumbnails/{{thumb}}" id="gallery-img-{{slug}}"/>
       </div>
     {{/if}}
   {{/each}}
