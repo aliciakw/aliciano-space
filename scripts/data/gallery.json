@@ -7,6 +7,7 @@
       "title": "Walk Home",
       "subtitle": "",
       "date": "2018",
+      "media": "acrylic on canvas",
       "dimensions": "12\" x 1\""
     },
     {
@@ -16,6 +17,7 @@
       "title": "Bedford Stop",
       "subtitle": "",
       "date": "2018",
+      "media": "oil on canvas paper",
       "dimensions": "8\" x 11\""
     },
     {
@@ -25,6 +27,7 @@
       "title": "600 Fenimore Street",
       "subtitle": "",
       "date": "2018",
+      "media": "acrylic on canvas",
       "dimensions": "36\" x 24\""
     },
     {
@@ -34,6 +37,7 @@
       "title": "Self portrait with space heater",
       "subtitle": "",
       "date": "2016",
+      "media": "acrylic on canvas paper",
       "dimensions": "8\" x 11\""
     },
     {
@@ -43,6 +47,7 @@
       "title": "Hooking Up",
       "subtitle": "",
       "date": "2016",
+      "media": "acrylic on canvas paper",
       "dimensions": "8\" x 11\""
     },
     {
@@ -52,15 +57,17 @@
       "title": "Joshua Trees",
       "subtitle": "",
       "date": "2016",
+      "media": "acrylic on canvas paper",
       "dimensions": "4\" x 8\""
     },
     {
       "slug": "9scenes",
       "filename": "9scenes.jpeg",
       "thumb": "thumb_9scenes.png",
-      "title": "9 scenes from the day a white supremacist drove his car into a crowd of protestors in charlottesville, virginia",
+      "title": "9 scenes from the day a white supremacist drove his car into a crowd of protestors in Charlottesville, Virginia",
       "subtitle": "",
-      "date": "",
+      "date": "2018",
+      "media": "oil on panel",
       "dimensions": "18\" x 12\""
     },
     {
@@ -70,6 +77,7 @@
       "title": "3 Sisters",
       "subtitle": "",
       "date": "2017",
+      "media": "acrylic on canvas paper",
       "dimensions": "24\" x 18\""
     },
     {
@@ -79,6 +87,7 @@
       "title": "Watching Over",
       "subtitle": "",
       "date": "2017",
+      "media": "acrylic on canvas paper",
       "dimensions": "24\" x 18\""
     },
     {
@@ -88,6 +97,7 @@
       "title": "Grandparents, via Snapchat",
       "subtitle": "",
       "date": "2017",
+      "media": "oil on panel",
       "dimensions": "12\" x 18\""
     },
     {
@@ -97,6 +107,7 @@
       "title": "Leo Carillo Threshold",
       "subtitle": "",
       "date": "2017",
+      "media": "acrylic on canvas paper",
       "dimensions": "24\" x 12\""
     },
     {
@@ -106,6 +117,7 @@
       "title": "Big Sur Tarot",
       "subtitle": "",
       "date": "2017",
+      "media": "oil on panel",
       "dimensions": "16\" x 20\""
     }
   ],
@@ -117,6 +129,7 @@
       "title": "Billy",
       "subtitle": "",
       "date": "2018",
+      "media": "oil on canvas paper",
       "dimensions": "18\" x 24\""
     },
     {
@@ -126,6 +139,7 @@
       "title": "Amy",
       "subtitle": "",
       "date": "2018",
+      "media": "oil on canvas paper",
       "dimensions": "18\" x 24\""
     },
     {
@@ -135,6 +149,7 @@
       "title": "Yoga Man",
       "subtitle": "",
       "date": "2018",
+      "media": "oil on canvas",
       "dimensions": "8\" x 10\""
     },
     {
@@ -144,6 +159,7 @@
       "title": "Startup Bros sur l'herbe",
       "subtitle": "",
       "date": "2018",
+      "media": "oil on panel",
       "dimensions": "18\" x 12\""
     },
     {
@@ -153,6 +169,7 @@
       "title": "Lonely Pool",
       "subtitle": "",
       "date": "2017",
+      "media": "oil on panel",
       "dimensions": "20\" x 16\""
     },
     {
@@ -162,6 +179,7 @@
       "title": "California Crotch",
       "subtitle": "",
       "date": "",
+      "media": "acrylic on canvas paper",
       "dimensions": "11\" x 8\""
     },
     {
@@ -171,6 +189,7 @@
       "title": "Riis",
       "subtitle": "",
       "date": "2017",
+      "media": "acrylic on canvas paper",
       "dimensions": "11\" x 8\""
     },
     {
@@ -180,6 +199,7 @@
       "title": "John",
       "subtitle": "",
       "date": "2018",
+      "media": "oil on canvas paper",
       "dimensions": "18\" x 24\""
     },
     {
@@ -189,6 +209,7 @@
       "title": "Xbox Glow",
       "subtitle": "",
       "date": "2016",
+      "media": "acrylic on canvas paper",
       "dimensions": "8\" x 11\""
     },
     {
@@ -198,6 +219,7 @@
       "title": "Pink Mint",
       "subtitle": "",
       "date": "2018",
+      "media": "oil on canvas",
       "dimensions": "9\" x 9\""
     },
     {
@@ -207,6 +229,7 @@
       "title": "White Garlic",
       "subtitle": "",
       "date": "2018",
+      "media": "acrylic on canvas",
       "dimensions": "12\" x 8\""
     },
     {
@@ -216,6 +239,7 @@
       "title": "Relaxed Nudes",
       "subtitle": "",
       "date": "2017",
+      "media": "oil on canvas",
       "dimensions": "9\" x 9\""
     },
     {
@@ -225,6 +249,7 @@
       "title": "Figure with blue drapes",
       "subtitle": "",
       "date": "2017",
+      "media": "oil on canvas",
       "dimensions": "9\" x 9\""
     },
     {
@@ -234,6 +259,7 @@
       "title": "Figure from back, Figure from right side",
       "subtitle": "",
       "date": "2017",
+      "media": "oil on canvas",
       "dimensions": "9\" x 9\" (two panels)"
     }
   ]

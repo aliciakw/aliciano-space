@@ -1,7 +1,14 @@
 {{#if title}}
   <div class="lightbox">
-    <h3>detail: {{title}}</h3>
-    <img src="img/works/{{filename}}" />
-    <button class="close-trigger">close</button>
+    <div class="lightbox-header">
+      <button class="close-trigger"><img src="img/x.svg"/></button>
+    </div>
+    <div class="lightbox-image">
+      <img src="img/works/{{filename}}" />
+    </div>
+    <div class="lightbox-caption">
+      <p>"{{title}}" &mdash; {{media}}. {{dimensions}}. {{date}}.</p>
+    </div>
+
   </div>
 {{/if}}

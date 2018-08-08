@@ -46,8 +46,15 @@ requirejs([
       });
       $('.close-trigger').click((event) => {
         event.preventDefault();
-        console.log('#@$#%$%~');
         render(currentCategory, null);
+      });
+      $('.blanket').click((event) => {
+        render(currentCategory, null);
+      });
+      $(document).keyup((e) => {
+        if (e.keyCode == 27) { // esc key
+          render(currentCategory, null);
+        }
       });
     }
 
