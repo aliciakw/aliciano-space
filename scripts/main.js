@@ -25,11 +25,27 @@ requirejs([
     function render(currentCategory, selectedImage) {
       gallery.renderNavContent($, Handlebars, navTemplate, categoryNames, currentCategory);
       gallery.renderThumbnailGallery($, Handlebars, thumbnailTemplate, data, currentCategory);
-      lightbox.render($, Handlebars, lightboxTemplate, selectedImage);
+
+      var selectedImageIndex;
+      var prevSlug;
+      var nextSlug;
+      var prevSlug = selectedImageIndex > 0 ? data[currentCategory][selectedImageIndex - 1].slug : null;
+      var nextSlug = selectedImageIndex < currentCategory.length ? data[currentCategory][selectedImageIndex + 1].slug : null;
+
       if (selectedImage) {
         $('.blanket').show();
+        var categoryData = data[currentCategory];
+        selectedImageIndex = categoryData.indexOf(selectedImage);
+        if (selectedImageIndex > 0) {
+          prevSlug = categoryData[selectedImageIndex - 1].slug;
+        }
+        if (selectedImageIndex < categoryData.length - 1) {
+          nextSlug = categoryData[selectedImageIndex + 1].slug;
+        }
+        lightbox.render($, Handlebars, lightboxTemplate, selectedImage, prevSlug, nextSlug);
       } else {
         $('.blanket').hide();
+        lightbox.render($, Handlebars, lightboxTemplate, selectedImage, null, null);
       }
 
       // a lil crude -_-
@@ -38,12 +54,25 @@ requirejs([
         var newCategoryName = targetId.replace('gallery-category-', '');
         render(newCategoryName);
       });
+
+      // open lightbox
       $('.thumbnail').click((event) => {
         var targetId = $(event.target).attr('id');
         var imgSlug = targetId.replace('gallery-img-', '');
         selectedImage = data[currentCategory].find((image) => image.slug === imgSlug);
         render(currentCategory, selectedImage);
       });
+
+      // change featured image
+      $('.left-trigger, .right-trigger',).click((event) => {
+        event.preventDefault();
+        var targetId = $(event.target).attr('id');
+        var imgSlug = targetId.replace('goto-', '');
+        selectedImage = data[currentCategory].find((image) => image.slug === imgSlug);
+        render(currentCategory, selectedImage);
+      });
+
+      // close lightbox
       $('.close-trigger').click((event) => {
         event.preventDefault();
         render(currentCategory, null);

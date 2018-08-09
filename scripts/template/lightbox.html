@@ -1,13 +1,23 @@
-{{#if title}}
+{{#if painting.title}}
   <div class="lightbox">
     <div class="lightbox-header">
       <button class="close-trigger"><img src="img/x.svg"/></button>
     </div>
     <div class="lightbox-image">
-      <img src="img/works/{{filename}}" />
+      {{#if prevSlug}}
+        <button class="left-trigger" id="goto-{{prevSlug}}">
+          <img src="img/arrow.svg"/>
+        </button>
+      {{/if}}
+      <img src="img/works/{{painting.filename}}" />
+      {{#if nextSlug}}
+        <button class="right-trigger" id="goto-{{nextSlug}}">
+          <img src="img/arrow.svg"/>
+        </button>
+      {{/if}}
     </div>
     <div class="lightbox-caption">
-      <p>"{{title}}" &mdash; {{media}}. {{dimensions}}. {{date}}.</p>
+      <p>"{{painting.title}}" &mdash; {{painting.media}}. {{painting.dimensions}}. {{painting.date}}.</p>
     </div>
 
   </div>

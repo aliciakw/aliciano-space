@@ -131,12 +131,17 @@ li.selected {
   max-width: 750px;
   max-height: 97%;
 }
-.close-trigger {
-  text-align: right;
-  margin: 4px 0;
+.lightbox button {
   border: none;
   background: none;
   cursor: pointer;
+}
+.close-trigger {
+  text-align: right;
+  margin: 4px 0;
+}
+.left-trigger {
+  transform: rotate(180deg);  
 }
 
 
