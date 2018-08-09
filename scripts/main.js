@@ -59,16 +59,16 @@ requirejs([
       $('.thumbnail').click((event) => {
         var targetId = $(event.target).attr('id');
         var imgSlug = targetId.replace('gallery-img-', '');
-        selectedImage = data[currentCategory].find((image) => image.slug === imgSlug);
+        selectedImage = categoryData.find((image) => image.slug === imgSlug);
         render(currentCategory, selectedImage);
       });
 
       // change featured image
-      $('.left-trigger, .right-trigger',).click((event) => {
+      $('.left-trigger, .right-trigger').click((event) => {
         event.preventDefault();
         var targetId = $(event.target).attr('id');
         var imgSlug = targetId.replace('goto-', '');
-        selectedImage = data[currentCategory].find((image) => image.slug === imgSlug);
+        selectedImage = categoryData.find((image) => image.slug === imgSlug);
         render(currentCategory, selectedImage);
       });
 
@@ -83,6 +83,14 @@ requirejs([
       $(document).keyup((e) => {
         if (e.keyCode == 27) { // esc key
           render(currentCategory, null);
+        }
+        if (prevSlug && e.keyCode == 37) { // left arrow key
+          selectedImage = categoryData.find((image) => image.slug === prevSlug);
+          render(currentCategory, selectedImage);
+        }
+        if (nextSlug && e.keyCode == 39) { // right arrow key
+          selectedImage = categoryData.find((image) => image.slug === nextSlug);
+          render(currentCategory, selectedImage);
         }
       });
     }
