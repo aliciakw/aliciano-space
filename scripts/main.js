@@ -10,8 +10,8 @@ requirejs.config({
 requirejs([
   'jquery',
   'handlebars',
-  'text!data/gallery.json',
-  'text!template/gallery-nav.html',
+  'text!data/collections.json',
+  'text!template/collections-nav.html',
   'text!template/thumbnail-gallery.html',
   'app/gallery',
   'app/lightbox',
@@ -23,8 +23,9 @@ requirejs([
     Handlebars.registerHelper('spacify', (text) => text.replace(/\-/g, ' '));
 
     function render(currentCategory, selectedImage) {
-      gallery.renderNavContent($, Handlebars, navTemplate, categoryNames, currentCategory);
-      gallery.renderThumbnailGallery($, Handlebars, thumbnailTemplate, data, currentCategory);
+      var categoryData = data[currentCategory];
+      gallery.renderCollectionsNavContent($, Handlebars, navTemplate, categoryNames, currentCategory, categoryData);
+      //gallery.renderThumbnailGallery($, Handlebars, thumbnailTemplate, data, currentCategory);
 
       var selectedImageIndex;
       var prevSlug;
@@ -34,7 +35,6 @@ requirejs([
 
       if (selectedImage) {
         $('.blanket').show();
-        var categoryData = data[currentCategory];
         selectedImageIndex = categoryData.indexOf(selectedImage);
         if (selectedImageIndex > 0) {
           prevSlug = categoryData[selectedImageIndex - 1].slug;

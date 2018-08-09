@@ -1,0 +1,272 @@
+{
+  "google-realities": [
+    {
+      "slug": "walk-home",
+      "filename": "2018-Walk-Home.jpeg",
+      "thumb": "thumb_walk-home.png",
+      "title": "Walk Home",
+      "subtitle": "",
+      "date": "2018",
+      "media": "acrylic on canvas",
+      "dimensions": "12\" x 1\""
+    },
+    {
+      "slug": "bedford-stop",
+      "filename": "2018-Bedford-Stop.jpeg",
+      "thumb": "thumb_bedford-stop.png",
+      "title": "Bedford Stop",
+      "subtitle": "",
+      "date": "2018",
+      "media": "oil on canvas paper",
+      "dimensions": "8\" x 11\""
+    },
+    {
+      "slug": "600-flatbush",
+      "filename": "2018-600_Flatbush.jpeg",
+      "thumb": "thumb_600-fenimore.png",
+      "title": "600 Fenimore Street",
+      "subtitle": "",
+      "date": "2018",
+      "media": "acrylic on canvas",
+      "dimensions": "36\" x 24\""
+    }
+  ],
+  "political": [
+    {
+      "slug": "9scenes",
+      "filename": "9scenes.jpeg",
+      "thumb": "thumb_9scenes.png",
+      "title": "9 scenes from the day a white supremacist drove his car into a crowd of protestors in Charlottesville, Virginia",
+      "subtitle": "",
+      "date": "2018",
+      "media": "oil on panel",
+      "dimensions": "18\" x 12\""
+    }
+  ],
+  "my-ancestors-were-mountains": [
+    {
+      "slug": "joshua-tree",
+      "filename": "2016-joshuatree.jpeg",
+      "thumb": "thumb_joshuatree.png",
+      "title": "Joshua Trees",
+      "subtitle": "",
+      "date": "2016",
+      "media": "acrylic on canvas paper",
+      "dimensions": "4\" x 8\""
+    },
+    {
+      "slug": "3sisters",
+      "filename": "2017-threesisters.jpeg",
+      "thumb": "thumb_3sisters.png",
+      "title": "3 Sisters",
+      "subtitle": "",
+      "date": "2017",
+      "media": "acrylic on canvas paper",
+      "dimensions": "24\" x 18\""
+    },
+    {
+      "slug": "watching-over",
+      "filename": "2017-watchingover.jpeg",
+      "thumb": "thumb_watching-over.png",
+      "title": "Watching Over",
+      "subtitle": "",
+      "date": "2017",
+      "media": "acrylic on canvas paper",
+      "dimensions": "24\" x 18\""
+    },
+    {
+      "slug": "leo-carillo",
+      "filename": "2017-leo-carillo-threshold.jpeg",
+      "thumb": "thumb_leo-carillo.png",
+      "title": "Leo Carillo Threshold",
+      "subtitle": "",
+      "date": "2017",
+      "media": "acrylic on canvas paper",
+      "dimensions": "24\" x 12\""
+    },
+    {
+      "slug": "tarot",
+      "filename": "2017-big-sur-tarot.jpeg",
+      "thumb": "thumb_tarot.png",
+      "title": "Big Sur Tarot",
+      "subtitle": "",
+      "date": "2017",
+      "media": "oil on panel",
+      "dimensions": "16\" x 20\""
+    },
+    {
+      "slug": "crotch",
+      "filename": "2017-california-crotch.jpeg",
+      "thumb": "thumb_california-crotch.png",
+      "title": "California Crotch",
+      "subtitle": "",
+      "date": "",
+      "media": "acrylic on canvas paper",
+      "dimensions": "11\" x 8\""
+    }
+  ],
+  "relations": [
+    {
+      "slug": "heater",
+      "filename": "2016-selfportrait-with-heater.jpeg",
+      "thumb": "thumb_heater.png",
+      "title": "Self portrait with space heater",
+      "subtitle": "",
+      "date": "2016",
+      "media": "acrylic on canvas paper",
+      "dimensions": "8\" x 11\""
+    },
+    {
+      "slug": "hooking-up",
+      "filename": "2016-hooking-up.jpeg",
+      "thumb": "thumb_hooking-up.png",
+      "title": "Hooking Up",
+      "subtitle": "",
+      "date": "2016",
+      "media": "acrylic on canvas paper",
+      "dimensions": "8\" x 11\""
+    },
+    {
+      "slug": "grandparents",
+      "filename": "2017-grandparents-with-snapchat.jpeg",
+      "thumb": "thumb_grandparents.png",
+      "title": "Grandparents, via Snapchat",
+      "subtitle": "",
+      "date": "2017",
+      "media": "oil on panel",
+      "dimensions": "12\" x 18\""
+    },
+    {
+      "slug": "xbox",
+      "filename": "2016-xbox-glow.jpeg",
+      "thumb": "thumb_xbox.png",
+      "title": "Xbox Glow",
+      "subtitle": "",
+      "date": "2016",
+      "media": "acrylic on canvas paper",
+      "dimensions": "8\" x 11\""
+    }
+  ],
+  "coursework": [
+    {
+      "slug": "billy",
+      "filename": "2018-amy.jpeg",
+      "thumb": "thumb_billy.png",
+      "title": "Billy",
+      "subtitle": "",
+      "date": "2018",
+      "media": "oil on canvas paper",
+      "dimensions": "18\" x 24\""
+    },
+    {
+      "slug": "amy",
+      "filename": "2018-amy.jpeg",
+      "thumb": "thumb_amy.png",
+      "title": "Amy",
+      "subtitle": "",
+      "date": "2018",
+      "media": "oil on canvas paper",
+      "dimensions": "18\" x 24\""
+    },
+    {
+      "slug": "yoga",
+      "filename": "2018-yoga.jpeg",
+      "thumb": "thumb_yoga.png",
+      "title": "Yoga Man",
+      "subtitle": "",
+      "date": "2018",
+      "media": "oil on canvas",
+      "dimensions": "8\" x 10\""
+    },
+    {
+      "slug": "startup",
+      "filename": "2018-startup-boys-sur-l-herbe.jpeg",
+      "thumb": "thumb_surlherbe.png",
+      "title": "Startup Bros sur l'herbe",
+      "subtitle": "",
+      "date": "2018",
+      "media": "oil on panel",
+      "dimensions": "18\" x 12\""
+    },
+    {
+      "slug": "pool",
+      "filename": "2017-lonely-pool.jpeg",
+      "thumb": "thumb_lonely-pool.png",
+      "title": "Lonely Pool",
+      "subtitle": "",
+      "date": "2017",
+      "media": "oil on panel",
+      "dimensions": "20\" x 16\""
+    },
+    {
+      "slug": "riis",
+      "filename": "2017-riis.jpeg",
+      "thumb": "thumb_riis.png",
+      "title": "Riis",
+      "subtitle": "",
+      "date": "2017",
+      "media": "acrylic on canvas paper",
+      "dimensions": "11\" x 8\""
+    },
+    {
+      "slug": "john",
+      "filename": "2018-john.jpeg",
+      "thumb": "thumb_john.png",
+      "title": "John",
+      "subtitle": "",
+      "date": "2018",
+      "media": "oil on canvas paper",
+      "dimensions": "18\" x 24\""
+    },
+    {
+      "slug": "mint",
+      "filename": "2018-pink-mint.jpeg",
+      "thumb": "thumb_pink-mint.png",
+      "title": "Pink Mint",
+      "subtitle": "",
+      "date": "2018",
+      "media": "oil on canvas",
+      "dimensions": "9\" x 9\""
+    },
+    {
+      "slug": "garlic",
+      "filename": "2018-white-garlic.jpeg",
+      "thumb": "thumb_white-garlic.png",
+      "title": "White Garlic",
+      "subtitle": "",
+      "date": "2018",
+      "media": "acrylic on canvas",
+      "dimensions": "12\" x 8\""
+    },
+    {
+      "slug": "relaxed-nudes",
+      "filename": "2017-relaxed-nudes.jpeg",
+      "thumb": "thumb_relaxed-nudes.png",
+      "title": "Relaxed Nudes",
+      "subtitle": "",
+      "date": "2017",
+      "media": "oil on canvas",
+      "dimensions": "9\" x 9\""
+    },
+    {
+      "slug": "blue-drapes",
+      "filename": "2017-figure-with-blue-drapes.jpeg",
+      "thumb": "thumb_figure-with-blue-drapes.png",
+      "title": "Figure with blue drapes",
+      "subtitle": "",
+      "date": "2017",
+      "media": "oil on canvas",
+      "dimensions": "9\" x 9\""
+    },
+    {
+      "slug": "figure-right-back",
+      "filename": "2017-figure-rightside-back.jpeg",
+      "thumb": "thumb_figure-rightside-back.png",
+      "title": "Figure from back, Figure from right side",
+      "subtitle": "",
+      "date": "2017",
+      "media": "oil on canvas",
+      "dimensions": "9\" x 9\" (two panels)"
+    }
+  ]
+}
