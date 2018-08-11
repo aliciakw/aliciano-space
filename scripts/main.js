@@ -12,12 +12,10 @@ requirejs([
   'handlebars',
   'text!data/collections.json',
   'text!template/collections-nav.html',
-  'text!template/thumbnail-gallery.html',
   'app/gallery',
-  'app/lightbox',
   'text!template/lightbox.html'
 ],
-($, Handlebars, rawData, navTemplate, thumbnailTemplate, gallery, lightbox, lightboxTemplate) => {
+($, Handlebars, rawData, navTemplate, gallery, lightboxTemplate) => {
     var data = JSON.parse(rawData);
     var categoryNames = Object.keys(data);
     Handlebars.registerHelper('spacify', (text) => text.replace(/\-/g, ' '));
@@ -25,7 +23,6 @@ requirejs([
     function render(currentCategory, selectedImage) {
       var categoryData = data[currentCategory];
       gallery.renderCollectionsNavContent($, Handlebars, navTemplate, categoryNames, currentCategory, categoryData);
-      //gallery.renderThumbnailGallery($, Handlebars, thumbnailTemplate, data, currentCategory);
 
       var selectedImageIndex;
       var prevSlug;
@@ -33,6 +30,7 @@ requirejs([
       var prevSlug = selectedImageIndex > 0 ? data[currentCategory][selectedImageIndex - 1].slug : null;
       var nextSlug = selectedImageIndex < currentCategory.length ? data[currentCategory][selectedImageIndex + 1].slug : null;
 
+      // render lightbox, if applicable
       if (selectedImage) {
         $('.blanket').show();
         selectedImageIndex = categoryData.indexOf(selectedImage);
@@ -42,13 +40,13 @@ requirejs([
         if (selectedImageIndex < categoryData.length - 1) {
           nextSlug = categoryData[selectedImageIndex + 1].slug;
         }
-        lightbox.render($, Handlebars, lightboxTemplate, selectedImage, prevSlug, nextSlug);
+        gallery.renderLightbox($, Handlebars, lightboxTemplate, selectedImage, prevSlug, nextSlug);
       } else {
         $('.blanket').hide();
-        lightbox.render($, Handlebars, lightboxTemplate, selectedImage, null, null);
+        gallery.renderLightbox($, Handlebars, lightboxTemplate, selectedImage, null, null);
       }
 
-      // a lil crude -_-
+      // select a collection
       $('li.nav-category').click((event) => {
         var targetId = $(event.target).attr('id');
         var newCategoryName = targetId.replace('gallery-category-', '');

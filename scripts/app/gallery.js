@@ -1,16 +1,4 @@
 define(() => ({
-    renderNavContent: ($, Handlebars, template, categoryNames, currentCategory) => {
-      var compiled = Handlebars.compile(template);
-      function getCategoryNavConfig(categoryNames, newCurrentCategory) {
-        return categoryNames.map((categoryName) => ({
-          name: categoryName,
-          selected: categoryName === newCurrentCategory
-        }));
-      }
-      $('#gallery-nav-content').html(compiled({
-        config: getCategoryNavConfig(categoryNames, currentCategory)
-      }));
-    },
     renderCollectionsNavContent: ($, Handlebars, template, categoryNames, currentCategory, categoryData) => {
       var compiled = Handlebars.compile(template);
       function getCategoryNavConfig(categoryNames, newCurrentCategory) {
@@ -24,11 +12,12 @@ define(() => ({
         categoryData: categoryData
       }));
     },
-    renderThumbnailGallery: ($, Handlebars, template, data, currentCategory) => {
+    renderLightbox: ($, Handlebars, template, painting, prevSlug, nextSlug) => {
       var compiled = Handlebars.compile(template);
-      $('#thumbnail-gallery-content').html(compiled({
-        title: currentCategory,
-        paintings: data[currentCategory]
+      $('#detail-view-content').html(compiled({
+        painting: painting,
+        prevSlug: prevSlug,
+        nextSlug: nextSlug
       }));
     }
 }));
