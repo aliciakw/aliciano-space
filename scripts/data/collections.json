@@ -1,5 +1,24 @@
 {
-  "google-realities": [
+  "google-reality": [
+    {
+      "slug": "intro-google-reality",
+      "is-text": true,
+      "thumb": "scribble.jpeg",
+      "copy": [
+        "seach - click - pan",
+        "assume you understand"
+      ]
+    },
+    {
+      "slug": "woodfield",
+      "filename": "2018-4410_WoodfieldRd.jpeg",
+      "thumb": "thumb_4410-woodfield.png",
+      "title": "4410 Woodfield Rd",
+      "subtitle": "",
+      "date": "2018",
+      "media": "acrylic on canvas",
+      "dimensions": "12\" x 1\""
+    },
     {
       "slug": "walk-home",
       "filename": "2018-Walk-Home.jpeg",
@@ -11,16 +30,6 @@
       "dimensions": "12\" x 1\""
     },
     {
-      "slug": "bedford-stop",
-      "filename": "2018-Bedford-Stop.jpeg",
-      "thumb": "thumb_bedford-stop.png",
-      "title": "Bedford Stop",
-      "subtitle": "",
-      "date": "2018",
-      "media": "oil on canvas paper",
-      "dimensions": "8\" x 11\""
-    },
-    {
       "slug": "600-flatbush",
       "filename": "2018-600_Flatbush.jpeg",
       "thumb": "thumb_600-fenimore.png",
@@ -29,9 +38,28 @@
       "date": "2018",
       "media": "acrylic on canvas",
       "dimensions": "36\" x 24\""
+    },
+    {
+      "slug": "bedford-stop",
+      "filename": "2018-Bedford-Stop.jpeg",
+      "thumb": "thumb_bedford-stop.png",
+      "title": "Bedford Stop",
+      "subtitle": "",
+      "date": "2018",
+      "media": "oil on canvas paper",
+      "dimensions": "8\" x 11\""
     }
   ],
   "political": [
+    {
+      "slug": "intro-political",
+      "is-text": true,
+      "thumb": "scribble.jpeg",
+      "copy": [
+        "some things",
+        "you can't help watching"
+      ]
+    },
     {
       "slug": "9scenes",
       "filename": "9scenes.jpeg",
@@ -44,6 +72,14 @@
     }
   ],
   "my-ancestors-were-mountains": [
+    {
+      "slug": "intro-ancestors-mountains",
+      "is-text": true,
+      "thumb": "scribble.jpeg",
+      "copy": [
+        "TKTK"
+      ]
+    },
     {
       "slug": "joshua-tree",
       "filename": "2016-joshuatree.jpeg",
@@ -107,6 +143,16 @@
   ],
   "relations": [
     {
+      "slug": "intro-relations",
+      "is-text": true,
+      "thumb": "scribble.jpeg",
+      "copy": [
+        "i'm sorry. i just can't help",
+        "making up",
+        "the people who make me up"
+      ]
+    },
+    {
       "slug": "heater",
       "filename": "2016-selfportrait-with-heater.jpeg",
       "thumb": "thumb_heater.png",
@@ -149,8 +195,47 @@
   ],
   "coursework": [
     {
+      "slug": "intro-coursework",
+      "is-text": true,
+      "thumb": "scribble.jpeg",
+      "copy": [
+        "work work work work work work"
+      ],
+      "byline": " ~ rihanna"
+    },
+    {
+      "slug": "blue-drapes",
+      "filename": "2017-figure-with-blue-drapes.jpeg",
+      "thumb": "thumb_figure-with-blue-drapes.png",
+      "title": "Figure with blue drapes",
+      "subtitle": "",
+      "date": "2017",
+      "media": "oil on canvas",
+      "dimensions": "9\" x 9\""
+    },
+    {
+      "slug": "figure-right-back",
+      "filename": "2017-figure-rightside-back.png",
+      "thumb": "thumb_figure-rightside-back.png",
+      "title": "Figure from back, Figure from right side",
+      "subtitle": "",
+      "date": "2017",
+      "media": "oil on canvas",
+      "dimensions": "9\" x 9\" (two panels)"
+    },
+    {
+      "slug": "relaxed-nudes",
+      "filename": "2017-relaxed-nudes.jpeg",
+      "thumb": "thumb_relaxed-nudes.png",
+      "title": "Relaxed Nudes",
+      "subtitle": "",
+      "date": "2017",
+      "media": "oil on canvas",
+      "dimensions": "9\" x 9\""
+    },
+    {
       "slug": "billy",
-      "filename": "2018-amy.jpeg",
+      "filename": "2018-billy.jpeg",
       "thumb": "thumb_billy.png",
       "title": "Billy",
       "subtitle": "",
@@ -169,10 +254,10 @@
       "dimensions": "18\" x 24\""
     },
     {
-      "slug": "yoga",
+      "slug": "yogi",
       "filename": "2018-yoga.jpeg",
       "thumb": "thumb_yoga.png",
-      "title": "Yoga Man",
+      "title": "Yogi",
       "subtitle": "",
       "date": "2018",
       "media": "oil on canvas",
@@ -237,36 +322,6 @@
       "date": "2018",
       "media": "acrylic on canvas",
       "dimensions": "12\" x 8\""
-    },
-    {
-      "slug": "relaxed-nudes",
-      "filename": "2017-relaxed-nudes.jpeg",
-      "thumb": "thumb_relaxed-nudes.png",
-      "title": "Relaxed Nudes",
-      "subtitle": "",
-      "date": "2017",
-      "media": "oil on canvas",
-      "dimensions": "9\" x 9\""
-    },
-    {
-      "slug": "blue-drapes",
-      "filename": "2017-figure-with-blue-drapes.jpeg",
-      "thumb": "thumb_figure-with-blue-drapes.png",
-      "title": "Figure with blue drapes",
-      "subtitle": "",
-      "date": "2017",
-      "media": "oil on canvas",
-      "dimensions": "9\" x 9\""
-    },
-    {
-      "slug": "figure-right-back",
-      "filename": "2017-figure-rightside-back.jpeg",
-      "thumb": "thumb_figure-rightside-back.png",
-      "title": "Figure from back, Figure from right side",
-      "subtitle": "",
-      "date": "2017",
-      "media": "oil on canvas",
-      "dimensions": "9\" x 9\" (two panels)"
     }
   ]
 }

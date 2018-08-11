@@ -19,7 +19,6 @@ define(() => ({
           selected: categoryName === newCurrentCategory
         }));
       }
-      console.log(categoryData);
       $('#collections-nav-content').html(compiled({
         config: getCategoryNavConfig(categoryNames, currentCategory),
         categoryData: categoryData

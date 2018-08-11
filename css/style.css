@@ -44,7 +44,7 @@ p {
 ul {
   text-transform: uppercase;
   list-style-type: none;
-  padding: 20px;
+  padding: 0 20px;
 }
 #collections-nav-content li {
   display: block;
@@ -130,6 +130,21 @@ ul {
   max-width: 750px;
   max-height: 97%;
 }
+.lightbox-plaintext {
+  font-family: monospace;
+  width: auto;
+  height: 100%;
+  max-width: 750px;
+  font-size: 2em;
+  line-height: 2em;
+}
+.lightbox-plaintext p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .lightbox button {
   border: none;
   background: none;
@@ -140,7 +155,15 @@ ul {
   margin: 4px 0;
 }
 .left-trigger {
+  position: absolute;
+  left: 0;
+  top: calc(50% - 10px);
   transform: rotate(180deg);
+}
+.right-trigger {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 10px);
 }
 
 
@@ -153,6 +176,13 @@ ul {
 .right {
   text-align: right;
 }
+
+.vertical-dots-spacer {
+  border-left: 5px dotted #000;
+  height: 50px;
+  margin-left: 50%;
+}
+
 @-moz-keyframes spin {
   from { -moz-transform: rotate(0deg); }
   to { -moz-transform: rotate(360deg); }
