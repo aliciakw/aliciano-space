@@ -1,0 +1,110 @@
+/* thumbnail navigation */
+#collections-nav-content li {
+  display: block;
+  margin: 20px;
+}
+#collections-nav-content li:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+#collections-nav-content li.selected {
+  font-size: 1.5em;
+  border: 1px solid black;
+  padding: 5px;
+}
+#collections-nav-content li.selected:hover {
+  font-weight: normal;
+}
+.thumbnail-gallery {
+  overflow: auto;
+  padding: 5px 50px;
+}
+.thumbnail {
+  width: 20px;
+  height: 20px;
+  margin: 10px auto;
+  opacity: .65;
+  display: inline-block;
+}
+.thumbnail img {
+  width: 20px;
+  height: 20px;
+}
+.thumbnail:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* lightbox view */
+.lightbox {
+  width: 90%;
+  height: 85%;
+  top: 5%;
+  left: 5%;
+  margin: auto;
+  background: #fff;
+  z-index: 3;
+  position: fixed;
+  padding: 0;
+  text-align: center;
+}
+.lightbox-header {
+  text-align: right;
+  height: 40px;
+  padding-top: 4px;
+}
+.lightbox-image {
+  height: calc(100% - 110px);
+  overflow: auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+}
+.lightbox-caption {
+  height: 50px;
+  font-style: italic;
+  font-weight: lighter;
+  padding: 0 30px;
+}
+.lightbox img {
+  margin: auto;
+  width: auto;
+  height: auto;
+  max-width: 750px;
+  max-height: 97%;
+}
+.lightbox-plaintext {
+  font-family: monospace;
+  width: auto;
+  height: 100%;
+  max-width: 750px;
+  font-size: 2em;
+  line-height: 2em;
+}
+.lightbox-plaintext p {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.lightbox button {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+.close-trigger {
+  text-align: right;
+  margin: 4px 0;
+}
+.left-trigger {
+  position: absolute;
+  left: 0;
+  top: calc(50% - 10px);
+  transform: rotate(180deg);
+}
+.right-trigger {
+  position: absolute;
+  right: 0;
+  top: calc(50% - 10px);
+}
