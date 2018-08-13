@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "http-server",
-    "build": "node r.js -o scripts/build.js"
+    "build": "node r.js -o scripts/build.js optimize=none"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/aliciakw/aliciano-space#readme",
   "dependencies": {
-    "requirejs": "^2.3.5",
-    "uglify-js": "^3.4.7"
+    "requirejs": "^2.3.5"
   }
 }
