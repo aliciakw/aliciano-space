@@ -8,6 +8,7 @@ Build a well-organized and easy to update single-page application to showcase my
 
 #### run locally
 ```
+npm install
 npm run dev
 ```
 
