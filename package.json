@@ -1,0 +1,24 @@
+{
+  "name": "public",
+  "version": "1.0.0",
+  "description": "Portfolio website built with requirejs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "http-server",
+    "build": "node r.js -o scripts/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aliciakw/aliciano-space.git"
+  },
+  "author": "aliciakw",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aliciakw/aliciano-space/issues"
+  },
+  "homepage": "https://github.com/aliciakw/aliciano-space#readme",
+  "dependencies": {
+    "requirejs": "^2.3.5",
+    "uglify-js": "^3.4.7"
+  }
+}
