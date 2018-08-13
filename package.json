@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "http-server",
-    "build": "node src/scripts/lib/r.js -o src/scripts/build.js optimize=none",
-    "build-public-site": "npm run build && cp src/scripts/require.js dist/scripts/require.js && cp src/index.html dist/index.html && cp -r src/css dist/css && cp -r src/img dist/img"
+    "build": "babel --presets=env src/scripts/main.js > src/scripts/tmp.js && node src/scripts/lib/r.js -o src/scripts/build.js && rm src/scripts/tmp.js",
+    "output": "cp src/scripts/require.js dist/scripts/require.js && cp src/index.html dist/index.html && cp -r src/css dist/css && cp -r src/img dist/img",
+    "build-public-site": "npm run build && npm run output"
   },
   "repository": {
     "type": "git",
@@ -20,5 +21,9 @@
   "homepage": "https://github.com/aliciakw/aliciano-space#readme",
   "dependencies": {
     "requirejs": "^2.3.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }

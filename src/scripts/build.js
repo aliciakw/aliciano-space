@@ -5,6 +5,6 @@
         handlebars: 'lib/handlebars',
         text: 'lib/text'
     },
-    name: 'main',
+    name: 'tmp',
     out: '../../dist/scripts/main.js'
 })
