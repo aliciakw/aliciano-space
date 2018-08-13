@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "http-server",
-    "build": "node r.js -o scripts/build.js optimize=none"
+    "build": "node src/scripts/lib/r.js -o src/scripts/build.js optimize=none",
+    "public-site": "npm run build && cp src/scripts/require.js dist/scripts/require.js && cp src/index.html dist/index.html && cp -r src/css dist/css && cp -r src/img dist/img"
   },
   "repository": {
     "type": "git",

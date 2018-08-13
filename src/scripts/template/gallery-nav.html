@@ -1,0 +1,7 @@
+<ul>
+  {{#each config}}
+      <li class="nav-category {{#if selected}}selected{{/if}}" id="gallery-category-{{name}}">
+        {{spacify name}}
+      </li>
+  {{/each}}
+</ul>
