@@ -11,7 +11,9 @@ Build a well-organized and easy to update single-page application to showcase my
 npm run dev
 ```
 
-#### compile
+#### build the public site
+Compile the source code into the final static site:
 ```
-npm run build
+npm run build-public-site
 ```
+Upload the contents of `dist/` to the web host.
