@@ -1,18 +1,19 @@
 /* thumbnail navigation */
-#collections-nav-content li {
+.nav-category {
   display: block;
   margin: 20px;
+  transition: font-size .2s ease-in-out;
 }
-#collections-nav-content li:hover {
+.nav-category:hover {
   font-weight: bold;
   cursor: pointer;
 }
-#collections-nav-content li.selected {
+.nav-category.selected {
   font-size: 1.5em;
   border: 1px solid black;
   padding: 5px;
 }
-#collections-nav-content li.selected:hover {
+.nav-category.selected:hover {
   font-weight: normal;
 }
 .thumbnail-gallery {

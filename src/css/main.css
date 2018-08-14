@@ -19,7 +19,6 @@ footer {
   width: 100%;
   padding: 60px 0;
   min-height: 140px;
-  margin-top: 80px;
 }
 
 h1 {
@@ -68,10 +67,23 @@ ul {
   text-align: right;
 }
 
+.bio {
+  border-top: 1px solid black;
+  overflow: auto;
+  font-weight: 300;
+  font-size: .8em;
+  padding: 20px;
+  min-height: 60px;
+}
+.bio p {
+  display: none;
+}
+
 .vertical-dots-spacer {
   border-left: 5px dotted #000;
   height: 50px;
   margin-left: 50%;
+  display: none;
 }
 
 @-moz-keyframes spin {
