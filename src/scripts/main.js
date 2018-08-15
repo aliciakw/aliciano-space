@@ -54,6 +54,7 @@ requirejs([
         if (targetId) {
           var newCategoryName = targetId.replace('gallery-category-', '');
           render(newCategoryName);
+          $('.nav-category.selected').slideDown();
         }
       });
 

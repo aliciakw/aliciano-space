@@ -2,16 +2,22 @@
 .nav-category {
   display: block;
   margin: 20px;
-  transition: font-size .2s ease-in-out;
+  transition: font-size .2s, padding .1s, border .05s;
+  box-sizing: border-box;
 }
 .nav-category:hover {
   font-weight: bold;
   cursor: pointer;
+  border: 1px solid black;
+  padding: 5px;
 }
 .nav-category.selected {
   font-size: 1.5em;
   border: 1px solid black;
   padding: 5px;
+}
+.nav-category.stay-open {
+  height: auto;
 }
 .nav-category.selected:hover {
   font-weight: normal;
