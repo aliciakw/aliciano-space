@@ -10,15 +10,41 @@ header {
   padding: 40px 0 0 0;
 }
 section {
+}
+.section-content {
   margin: 20px auto;
   width: 600px;
+}
+#collections-nav-content {
+  padding: 20px 0;
+}
+.about {
+  border-top: 1px solid black;
+  overflow: auto;
+  font-weight: 300;
+  font-size: 1em;
+  padding: 20px;
+  min-height: 60px;
+  background: #ddd;
+  font-size: 0.9em;
+}
+.bio p {
+  font-size: 0.8em;
+}
+.about .section-content {
+  display: none;
+}
+.vertical-dots-spacer {
+  border-left: 5px dotted #000;
+  height: 50px;
+  margin-left: 50%;
+  display: none;
 }
 footer {
   color: #fff;
   background-color: #000;
   width: 100%;
-  padding: 60px 0;
-  min-height: 140px;
+  padding: 40px 0;
 }
 
 h1 {
@@ -38,6 +64,10 @@ footer h2 {
 h3 {
   text-transform: uppercase;
   margin-top: 0;
+}
+h6 {
+  text-transform: uppercase;
+  margin: 0;
 }
 p {
   font-size: .8em;
@@ -66,24 +96,12 @@ ul {
 .right {
   text-align: right;
 }
-
-.bio {
-  border-top: 1px solid black;
-  overflow: auto;
-  font-weight: 300;
-  font-size: .8em;
-  padding: 20px;
-  min-height: 60px;
-}
-.bio p {
-  display: none;
-}
-
-.vertical-dots-spacer {
-  border-left: 5px dotted #000;
-  height: 50px;
-  margin-left: 50%;
-  display: none;
+.half-width-col {
+  box-sizing: border-box;
+  display: inline-block;
+  float: left;
+  width: 50%;
+  padding: 2%;
 }
 
 @-moz-keyframes spin {

@@ -20,14 +20,13 @@ requirejs([
     const categoryNames = Object.keys(data);
     const navTemplate = Handlebars.compile(navTemplateFile);
     const lightboxTemplate = Handlebars.compile(lightboxTemplateFile);
-
-    function render(galleryName, selectedImageIndex) {
-      const getKeywordFromItemClicked = (clickEvent, keywordPrefix) => {
-        var targetId = $(clickEvent.currentTarget).attr('id');
-        if (targetId) {
-          return targetId.replace(keywordPrefix, '');
-        }
+    const getKeywordFromItemClicked = (clickEvent, keywordPrefix) => {
+      var targetId = $(clickEvent.currentTarget).attr('id');
+      if (targetId) {
+        return targetId.replace(keywordPrefix, '');
       }
+    };
+    function render(galleryName, selectedImageIndex) {
       gallery.renderGalleriesNavContent($, navTemplate, categoryNames, data);
 
       // render lightbox, if applicable
@@ -64,7 +63,6 @@ requirejs([
           if (selectedImageIndex > 0 && event.keyCode == 37) { // left arrow key
             return render(galleryName, selectedImageIndex - 1);
           }
-
         });
       } else {
         gallery.hideLightbox($);
@@ -103,7 +101,7 @@ requirejs([
         $('html, body').animate({ scrollTop: 0 }, "slow");
       }, 300);
       window.setTimeout(() => {
-        $('.bio p').fadeIn(600);
+        $('.about .section-content').fadeIn(600);
       }, 600);
       window.setTimeout(() => {
         animateCategories(1, 5, 40);
