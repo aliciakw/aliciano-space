@@ -10,19 +10,19 @@ requirejs.config({
 requirejs([
   'jquery',
   'handlebars',
-  'text!data/collections.json',
-  'text!template/collections-nav.html',
+  'text!data/galleries.json',
+  'text!template/gallery-thumbnails.html',
   'app/gallery',
   'text!template/lightbox.html'
 ],
 ($, Handlebars, rawData, navTemplate, gallery, lightboxTemplate) => {
     var data = JSON.parse(rawData);
     var categoryNames = Object.keys(data);
-    Handlebars.registerHelper('spacify', (text) => text.replace(/\-/g, ' '));
+    // Handlebars.registerHelper('spacify', (text) => text.replace(/\-/g, ' '));
 
     function render(currentCategory, selectedImage) {
       var categoryData = data[currentCategory];
-      gallery.renderCollectionsNavContent($, Handlebars, navTemplate, categoryNames, currentCategory, categoryData);
+      gallery.renderGalleriesNavContent($, Handlebars, navTemplate, categoryNames, data);
 
       var selectedImageIndex;
       var prevSlug;
@@ -59,12 +59,12 @@ requirejs([
       });
 
       // open lightbox
-      $('.thumbnail').click((event) => {
+      $('.gallery-thumbnail').click((event) => {
         var targetId = $(event.target).attr('id');
+        console.log('>', targetId);
         if (targetId) {
-          var imgSlug = targetId.replace('gallery-img-', '');
-          selectedImage = categoryData.find((image) => image.slug === imgSlug);
-          render(currentCategory, selectedImage);
+          var categoryName = targetId.replace('gallery-category-', '');
+          render(categoryName, data[categoryName].images[0]);
         }
       });
 
