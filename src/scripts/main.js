@@ -10,96 +10,69 @@ requirejs.config({
 requirejs([
   'jquery',
   'handlebars',
-  'text!data/collections.json',
-  'text!template/collections-nav.html',
+  'text!data/galleries.json',
+  'text!template/gallery-thumbnails.html',
   'app/gallery',
   'text!template/lightbox.html'
 ],
-($, Handlebars, rawData, navTemplate, gallery, lightboxTemplate) => {
-    var data = JSON.parse(rawData);
-    var categoryNames = Object.keys(data);
-    Handlebars.registerHelper('spacify', (text) => text.replace(/\-/g, ' '));
-
-    function render(currentCategory, selectedImage) {
-      var categoryData = data[currentCategory];
-      gallery.renderCollectionsNavContent($, Handlebars, navTemplate, categoryNames, currentCategory, categoryData);
-
-      var selectedImageIndex;
-      var prevSlug;
-      var nextSlug;
-      if (selectedImage) {
-        prevSlug = selectedImageIndex > 0 ? data[currentCategory][selectedImageIndex - 1].slug : null;
-        nextSlug = selectedImageIndex < currentCategory.length ? data[currentCategory][selectedImageIndex + 1].slug : null;
+($, Handlebars, rawData, navTemplateFile, gallery, lightboxTemplateFile) => {
+    const data = JSON.parse(rawData);
+    const categoryNames = Object.keys(data);
+    const navTemplate = Handlebars.compile(navTemplateFile);
+    const lightboxTemplate = Handlebars.compile(lightboxTemplateFile);
+    const getKeywordFromItemClicked = (clickEvent, keywordPrefix) => {
+      var targetId = $(clickEvent.currentTarget).attr('id');
+      if (targetId) {
+        return targetId.replace(keywordPrefix, '');
       }
+    };
+    function render(galleryName, selectedImageIndex) {
+      gallery.renderGalleriesNavContent($, navTemplate, categoryNames, data);
 
       // render lightbox, if applicable
-      if (selectedImage) {
-        $('.blanket').show();
-        selectedImageIndex = categoryData.indexOf(selectedImage);
-        if (selectedImageIndex > 0) {
-          prevSlug = categoryData[selectedImageIndex - 1].slug;
-        }
-        if (selectedImageIndex < categoryData.length - 1) {
-          nextSlug = categoryData[selectedImageIndex + 1].slug;
-        }
-        gallery.renderLightbox($, Handlebars, lightboxTemplate, selectedImage, prevSlug, nextSlug);
+      if (galleryName && selectedImageIndex >= 0) {
+        const galleryData = data[galleryName];
+        const galleryImages = galleryData.images;
+        gallery.renderLightbox($, lightboxTemplate, galleryImages, selectedImageIndex);
+
+        /* Available Actions: */
+        // change featured image
+        $('.left-trigger, .right-trigger').click((event) => {
+          event.preventDefault();
+          var targetId = $(event.target).attr('id');
+          if (targetId) {
+            const selectedImageIndex = parseInt(targetId.replace('goto-', ''), 10);
+            render(galleryName, selectedImageIndex);
+          }
+        });
+        // close lightbox
+        $('.close-trigger').click(() => {
+          return render(null, null);
+        });
+        $('.blanket').click(() => {
+          return render(null, null);
+        });
+        // keyboard actions
+        $(document).keyup((event) => {
+          if (event.keyCode == 27) { // esc key
+            return render(null, null);
+          }
+          if (selectedImageIndex + 1 < galleryImages.length && event.keyCode == 39) { // right arrow key
+            return render(galleryName, selectedImageIndex + 1);
+          }
+          if (selectedImageIndex > 0 && event.keyCode == 37) { // left arrow key
+            return render(galleryName, selectedImageIndex - 1);
+          }
+        });
       } else {
-        $('.blanket').hide();
-        gallery.renderLightbox($, Handlebars, lightboxTemplate, selectedImage, null, null);
+        gallery.hideLightbox($);
+        /* Available Actions: */
+        // select a gallery
+        $('.gallery-thumbnail').click((event) => {
+          const selectedGalleryName = getKeywordFromItemClicked(event, 'gallery-category-');
+          return render(selectedGalleryName, 0);
+        });
       }
-
-      // select a collection
-      $('li.nav-category').click((event) => {
-        var targetId = $(event.target).attr('id');
-        if (targetId) {
-          var newCategoryName = targetId.replace('gallery-category-', '');
-          render(newCategoryName);
-          $('.nav-category.selected').slideDown();
-        }
-      });
-
-      // open lightbox
-      $('.thumbnail').click((event) => {
-        var targetId = $(event.target).attr('id');
-        if (targetId) {
-          var imgSlug = targetId.replace('gallery-img-', '');
-          selectedImage = categoryData.find((image) => image.slug === imgSlug);
-          render(currentCategory, selectedImage);
-        }
-      });
-
-      // change featured image
-      $('.left-trigger, .right-trigger').click((event) => {
-        event.preventDefault();
-        var targetId = $(event.target).attr('id');
-        if (targetId) {
-          var imgSlug = targetId.replace('goto-', '');
-          selectedImage = categoryData.find((image) => image.slug === imgSlug);
-          render(currentCategory, selectedImage);
-        }
-      });
-
-      // close lightbox
-      $('.close-trigger').click((event) => {
-        event.preventDefault();
-        render(currentCategory, null);
-      });
-      $('.blanket').click((event) => {
-        render(currentCategory, null);
-      });
-      $(document).keyup((e) => {
-        if (e.keyCode == 27) { // esc key
-          render(currentCategory, null);
-        }
-        if (prevSlug && e.keyCode == 37) { // left arrow key
-          selectedImage = categoryData.find((image) => image.slug === prevSlug);
-          render(currentCategory, selectedImage);
-        }
-        if (nextSlug && e.keyCode == 39) { // right arrow key
-          selectedImage = categoryData.find((image) => image.slug === nextSlug);
-          render(currentCategory, selectedImage);
-        }
-      });
     }
 
     // initial render
@@ -128,7 +101,7 @@ requirejs([
         $('html, body').animate({ scrollTop: 0 }, "slow");
       }, 300);
       window.setTimeout(() => {
-        $('.bio p').fadeIn(600);
+        $('.about .section-content').fadeIn(600);
       }, 600);
       window.setTimeout(() => {
         animateCategories(1, 5, 40);

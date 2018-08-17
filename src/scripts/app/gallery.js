@@ -1,23 +1,22 @@
 define(() => ({
-    renderCollectionsNavContent: ($, Handlebars, template, categoryNames, currentCategory, categoryData) => {
-      var compiled = Handlebars.compile(template);
-      function getCategoryNavConfig(categoryNames, newCurrentCategory) {
-        return categoryNames.map((categoryName) => ({
-          name: categoryName,
-          selected: categoryName === newCurrentCategory
-        }));
-      }
-      $('#collections-nav-content').html(compiled({
-        config: getCategoryNavConfig(categoryNames, currentCategory),
-        categoryData: categoryData
+    renderGalleriesNavContent: ($, template, categoryNames, data) => {
+      const galleries = categoryNames.map((categoryName) => ({
+        categoryName,
+        title: data[categoryName].title,
+        icon: data[categoryName].icon
+      }));
+      $('#collections-nav-content').html(template({ galleries }));
+    },
+    renderLightbox: ($, template, galleryImages, selectedImageIndex) => {
+      $('.blanket').show();
+      $('#detail-view-content').html(template({
+        painting: galleryImages[selectedImageIndex],
+        prevIndex: selectedImageIndex > 0 && selectedImageIndex - 1,
+        nextIndex: selectedImageIndex + 1 < galleryImages.length && selectedImageIndex + 1
       }));
     },
-    renderLightbox: ($, Handlebars, template, painting, prevSlug, nextSlug) => {
-      var compiled = Handlebars.compile(template);
-      $('#detail-view-content').html(compiled({
-        painting: painting,
-        prevSlug: prevSlug,
-        nextSlug: nextSlug
-      }));
+    hideLightbox: ($) => {
+      $('#detail-view-content').html('');
+      $('.blanket').hide();
     }
 }));
