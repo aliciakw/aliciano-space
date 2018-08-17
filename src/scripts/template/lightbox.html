@@ -1,14 +1,15 @@
-{{# if painting.is-text}}
-  <div class="lightbox">
-    <div class="lightbox-header">
-      <button class="close-trigger"><img src="img/x.svg"/></button>
-    </div>
-    <div class="lightbox-image">
-      {{#if prevSlug}}
-        <button class="left-trigger" id="goto-{{prevSlug}}">
-          <img src="img/arrow.svg"/>
-        </button>
-      {{/if}}
+
+<div class="lightbox">
+  <div class="lightbox-header">
+    <button class="close-trigger"><img src="img/x.svg"/></button>
+  </div>
+  <div class="lightbox-image">
+    {{#if prevIndex}}
+      <button class="left-trigger" id="goto-{{prevIndex}}">
+        <img src="img/arrow.svg"/>
+      </button>
+    {{/if}}
+    {{# if painting.is-text}}
       <div class="lightbox-plaintext">
         <p>
           {{#each painting.copy}}
@@ -19,33 +20,19 @@
           {{/if}}
       </p>
       </div>
-      {{#if nextSlug}}
-        <button class="right-trigger" id="goto-{{nextSlug}}">
-          <img src="img/arrow.svg"/>
-        </button>
-      {{/if}}
-    </div>
-  </div>
-{{else if painting.title}}
-  <div class="lightbox">
-    <div class="lightbox-header">
-      <button class="close-trigger"><img src="img/x.svg"/></button>
-    </div>
-    <div class="lightbox-image">
-      {{#if prevSlug}}
-        <button class="left-trigger" id="goto-{{prevSlug}}">
-          <img src="img/arrow.svg"/>
-        </button>
-      {{/if}}
+    {{else}}
       <img src="img/works/{{painting.filename}}" />
-      {{#if nextSlug}}
-        <button class="right-trigger" id="goto-{{nextSlug}}">
-          <img src="img/arrow.svg"/>
-        </button>
-      {{/if}}
-    </div>
+    {{/if}}
+
+    {{#if nextIndex}}
+      <button class="right-trigger" id="goto-{{nextIndex}}">
+        <img src="img/arrow.svg"/>
+      </button>
+    {{/if}}
+  </div>
+  {{#if painting.title}}
     <div class="lightbox-caption">
       <p>"{{painting.title}}" &mdash; {{painting.media}}. {{painting.dimensions}}. {{painting.date}}.</p>
     </div>
-  </div>
-{{/if}}
+  {{/if}}
+</div>
