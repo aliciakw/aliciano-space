@@ -70,20 +70,20 @@
     "icon": "icon-google.jpg",
     "images": [
       {
-        "slug": "woodfield",
-        "filename": "2018-4410_WoodfieldRd.jpeg",
-        "thumb": "thumb_4410-woodfield.png",
-        "title": "4410 Woodfield Rd",
+        "slug": "walk-home",
+        "filename": "2018-Walk-Home.jpeg",
+        "thumb": "thumb_walk-home.png",
+        "title": "Walk Home",
         "subtitle": "",
         "date": "2018",
         "media": "acrylic on canvas",
         "dimensions": "12\" x 1\""
       },
       {
-        "slug": "walk-home",
-        "filename": "2018-Walk-Home.jpeg",
-        "thumb": "thumb_walk-home.png",
-        "title": "Walk Home",
+        "slug": "woodfield",
+        "filename": "2018-4410_WoodfieldRd-v2.jpeg",
+        "thumb": "thumb_4410-woodfield.png",
+        "title": "4410 Woodfield Rd",
         "subtitle": "",
         "date": "2018",
         "media": "acrylic on canvas",
@@ -116,20 +116,20 @@
     "icon": "icon-relations.jpg",
     "images": [
       {
+        "slug": "riis",
+        "filename": "2017-riis.jpeg",
+        "thumb": "thumb_riis.png",
+        "title": "Riis",
+        "subtitle": "",
+        "date": "2017",
+        "media": "acrylic on canvas paper",
+        "dimensions": "11\" x 8\""
+      },
+      {
         "slug": "heater",
         "filename": "2016-selfportrait-with-heater.jpeg",
         "thumb": "thumb_heater.png",
         "title": "Self portrait with space heater",
-        "subtitle": "",
-        "date": "2016",
-        "media": "acrylic on canvas paper",
-        "dimensions": "8\" x 11\""
-      },
-      {
-        "slug": "hooking-up",
-        "filename": "2016-hooking-up.jpeg",
-        "thumb": "thumb_hooking-up.png",
-        "title": "Hooking Up",
         "subtitle": "",
         "date": "2016",
         "media": "acrylic on canvas paper",
@@ -156,14 +156,14 @@
         "dimensions": "8\" x 11\""
       },
       {
-        "slug": "riis",
-        "filename": "2017-riis.jpeg",
-        "thumb": "thumb_riis.png",
-        "title": "Riis",
+        "slug": "hooking-up",
+        "filename": "2016-hooking-up.jpeg",
+        "thumb": "thumb_hooking-up.png",
+        "title": "Hooking Up",
         "subtitle": "",
-        "date": "2017",
+        "date": "2016",
         "media": "acrylic on canvas paper",
-        "dimensions": "11\" x 8\""
+        "dimensions": "8\" x 11\""
       }
     ]
   },
