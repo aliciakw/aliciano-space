@@ -11,8 +11,8 @@ define(() => ({
       $('.blanket').show();
       $('#detail-view-content').html(template({
         painting: galleryImages[selectedImageIndex],
-        prevIndex: selectedImageIndex > 0 && selectedImageIndex - 1,
-        nextIndex: selectedImageIndex + 1 < galleryImages.length && selectedImageIndex + 1
+        prevIndex: selectedImageIndex > 0 && 'goto-' + (selectedImageIndex - 1),
+        nextIndex: selectedImageIndex + 1 < galleryImages.length && 'goto-' + (selectedImageIndex + 1)
       }));
     },
     hideLightbox: ($) => {
