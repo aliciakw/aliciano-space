@@ -4,11 +4,9 @@
     <button class="close-trigger"><img src="img/icons/x.svg"/></button>
   </div>
   <div class="lightbox-image">
-    {{#if prevIndex}}
-      <button class="left-trigger" id="{{prevIndex}}">
-        <img src="img/icons/arrow.svg"/>
-      </button>
-    {{/if}}
+    <button class="left-trigger hidden" id="{{prevIndex}}">
+      <img src="img/icons/arrow.svg"/>
+    </button>
     {{# if painting.is-text}}
       <div class="lightbox-plaintext">
         <p>
@@ -21,7 +19,7 @@
       </p>
       </div>
     {{else}}
-      <img src="img/works/{{painting.filename}}" />
+      <img id="lightbox-image" src="img/works/{{painting.filename}}" />
     {{/if}}
 
     {{#if nextIndex}}
