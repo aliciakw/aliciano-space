@@ -20,63 +20,23 @@ requirejs([
     const categoryNames = Object.keys(data);
     const navTemplate = Handlebars.compile(navTemplateFile);
     const lightboxTemplate = Handlebars.compile(lightboxTemplateFile);
-    const getKeywordFromItemClicked = (clickEvent, keywordPrefix) => {
-      var targetId = $(clickEvent.currentTarget).attr('id');
-      if (targetId) {
-        return targetId.replace(keywordPrefix, '');
-      }
-    };
-    function render(galleryName, selectedImageIndex) {
-      gallery.renderGalleriesNavContent($, navTemplate, categoryNames, data);
+    let galleryImages;
 
-      // render lightbox, if applicable
-      if (galleryName && selectedImageIndex >= 0) {
-        const galleryData = data[galleryName];
-        const galleryImages = galleryData.images;
-        gallery.renderLightbox($, lightboxTemplate, galleryImages, selectedImageIndex);
-
-        /* Available Actions: */
-        // change featured image
-        $('.left-trigger, .right-trigger').click((event) => {
-          event.preventDefault();
-          var targetId = $(event.target).attr('id');
-          if (targetId) {
-            const selectedImageIndex = parseInt(targetId.replace('goto-', ''), 10);
-            render(galleryName, selectedImageIndex);
-          }
-        });
-        // close lightbox
-        $('.close-trigger').click(() => {
-          return render(null, null);
-        });
-        $('.blanket').click(() => {
-          return render(null, null);
-        });
-        // keyboard actions
-        $(document).keyup((event) => {
-          if (event.keyCode == 27) { // esc key
-            return render(null, null);
-          }
-          if (selectedImageIndex + 1 < galleryImages.length && event.keyCode == 39) { // right arrow key
-            return render(galleryName, selectedImageIndex + 1);
-          }
-          if (selectedImageIndex > 0 && event.keyCode == 37) { // left arrow key
-            return render(galleryName, selectedImageIndex - 1);
-          }
-        });
-      } else {
-        gallery.hideLightbox($);
-        /* Available Actions: */
-        // select a gallery
-        $('.gallery-thumbnail').click((event) => {
-          const selectedGalleryName = getKeywordFromItemClicked(event, 'gallery-category-');
-          return render(selectedGalleryName, 0);
-        });
-      }
-    }
 
     // initial render
-    render(null, null);
+    gallery.renderGalleriesNavContent($, navTemplate, categoryNames, data);
+
+    /* Available Actions: */
+    // open a gallery
+    $('.gallery-thumbnail').click((event) => {
+      const selectedGalleryName = gallery.getKeywordFromItemClicked($, event, 'gallery-category-');
+      galleryImages = data[selectedGalleryName].images;
+      gallery.renderLightbox($, lightboxTemplate, galleryImages, 0);
+    });
+    // close lightbox
+    $('.blanket').click(() => {
+      gallery.hideLightbox($);
+    });
 
     // startup animations
     var animateCategories = (i, max, interval) => {
@@ -103,9 +63,10 @@ requirejs([
       window.setTimeout(() => {
         $('.about .section-content').fadeIn(600);
       }, 600);
-      window.setTimeout(() => {
-        animateCategories(1, 5, 40);
-      }, 450);
+
+      // window.setTimeout(() => {
+      //   animateCategories(1, 5, 40);
+      // }, 450);
 
     });
 });

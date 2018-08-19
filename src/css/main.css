@@ -102,6 +102,9 @@ ul {
   width: 50%;
   padding: 2%;
 }
+.hidden {
+  display: none;
+}
 
 @-moz-keyframes spin {
   from { -moz-transform: rotate(0deg); }
