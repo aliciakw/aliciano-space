@@ -174,14 +174,14 @@
         "dimensions": "12\" x 18\""
       },
       {
-        "slug": "riis",
-        "filename": "2017-riis.jpeg",
-        "thumb": "thumb_riis.png",
-        "title": "Riis",
+        "slug": "xbox",
+        "filename": "2016-xbox-glow.jpeg",
+        "thumb": "thumb_xbox.png",
+        "title": "Xbox Glow",
         "subtitle": "",
-        "date": "2017",
+        "date": "2016",
         "media": "acrylic on canvas paper",
-        "dimensions": "11\" x 8\""
+        "dimensions": "8\" x 11\""
       },
       {
         "slug": "hooking-up",
@@ -194,14 +194,14 @@
         "dimensions": "8\" x 11\""
       },
       {
-        "slug": "xbox",
-        "filename": "2016-xbox-glow.jpeg",
-        "thumb": "thumb_xbox.png",
-        "title": "Xbox Glow",
+        "slug": "riis",
+        "filename": "2017-riis.jpeg",
+        "thumb": "thumb_riis.png",
+        "title": "Riis",
         "subtitle": "",
-        "date": "2016",
+        "date": "2017",
         "media": "acrylic on canvas paper",
-        "dimensions": "8\" x 11\""
+        "dimensions": "11\" x 8\""
       }
     ]
   },

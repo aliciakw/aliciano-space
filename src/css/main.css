@@ -11,23 +11,22 @@ header {
 }
 .section-content {
   margin: 20px auto;
-  width: 600px;
+  max-width: 700px;
 }
 #collections-nav-content {
   padding: 20px 0;
+  min-height: 200px;
 }
 .about {
+  margin-top: 40px;
   border-top: 1px solid black;
   overflow: auto;
   font-weight: 300;
   font-size: 1em;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   min-height: 60px;
   background: #ddd;
   font-size: 0.9em;
-}
-.bio p {
-  font-size: 0.8em;
 }
 .about .section-content {
   display: none;
@@ -42,7 +41,8 @@ footer {
   color: #fff;
   background-color: #000;
   width: 100%;
-  padding: 40px 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -55,14 +55,17 @@ h2 {
   letter-spacing: 4px;
   margin: 20px;
 }
-footer h2 {
-  display: inline;
-  font-weight: normal;
-  vertical-align: super;
-}
 h3 {
   text-transform: uppercase;
   margin-top: 0;
+}
+footer h3 {
+  display: inline;
+  letter-spacing: 4px;
+  text-transform: none;
+  font-weight: normal;
+  vertical-align: super;
+  margin-left: 0;
 }
 h6 {
   text-transform: uppercase;
@@ -84,6 +87,7 @@ ul {
   z-index: 2;
   position: fixed;
   display: none;
+  top: 0;
 }
 
 .light {
@@ -102,6 +106,15 @@ ul {
   width: 50%;
   padding: 2%;
 }
+@media (max-width: 750px) {
+  .half-width-col {
+    width: 100%;
+  }
+  #collections-nav-content {
+    padding: 0;
+  }
+}
+
 .hidden {
   display: none;
 }
@@ -120,6 +133,6 @@ ul {
 }
 .spin {
   animation: spin 2500ms linear infinite;
-  margin-left: 30px;
+  margin-left: 2%;
   width: 30px;
 }
