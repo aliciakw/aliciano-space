@@ -5,17 +5,21 @@
   justify-content: space-between;
   padding: 20px;
 }
-.gallery-thumbnail, .gallery-thumbnail img, .gallery-thumbnail div  {
-  width: 150px;
-  height: 150px;
+.gallery-thumbnail {
+  width: 0;
+  height: 0;
 }
 .gallery-thumbnail {
   display: inline-block;
   cursor: pointer;
   border: 1px solid green;
   position: relative;
+  overflow: hidden;
+  transition: width .5s, height .5s;
 }
 .gallery-thumbnail img, .gallery-thumbnail div  {
+  width: 150px;
+  height: 150px;
   transition: opacity .3s;
   position: absolute;
 }

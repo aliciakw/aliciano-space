@@ -39,18 +39,12 @@ requirejs([
     });
 
     // startup animations
-    var animateCategories = (i, max, interval) => {
+    const animateSequential = (i, max, interval, callback) => {
       window.setTimeout(() => {
         window.setTimeout(() => {
-          $('.nav-category:nth-child(' + i + ')').css('font-size', '1.5em');
-          if (i > 1) {
-            $('.nav-category:nth-child(' + (i - 1) + ')').css('font-size', '1.0em');
-          }
-          if (i <= max) {
-            return animateCategories(i + 1, max, interval);
-          }
-          if (i > max) {
-            $('.nav-category:nth-child(' + i + ')').css('font-size', '1em');
+          callback(i);
+          if (i < max) {
+            return animateSequential(i + 1, max, interval, callback);
           }
         }, interval * i);
       }, interval);
@@ -59,14 +53,18 @@ requirejs([
       window.setTimeout(() => {
         $('.vertical-dots-spacer').slideDown(800);
         $('html, body').animate({ scrollTop: 0 }, "slow");
+        $('.eye-img img').css('width', '100px');
       }, 300);
       window.setTimeout(() => {
         $('.about .section-content').fadeIn(600);
       }, 600);
+      window.setTimeout(() => {
+        $('.eye-img img').css('width', '60px');
+      }, 800);
 
-      // window.setTimeout(() => {
-      //   animateCategories(1, 5, 40);
-      // }, 450);
-
+      animateSequential(1, 4, 20, (i) => {
+        $('.gallery-thumbnail:nth-child(' + i + ')').css('width', '150px');
+        $('.gallery-thumbnail:nth-child(' + i + ')').css('height', '150px');
+      });
     });
 });

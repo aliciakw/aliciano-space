@@ -62,7 +62,6 @@ define(() => {
         $('#collections-nav-content').html(template({ galleries }));
       },
       renderLightbox: ($, template, galleryImages, selectedImageIndex) => {
-        console.log('!!!!');
         $('.blanket').show();
         $('#detail-view-content').html(template({
           painting: galleryImages[selectedImageIndex],

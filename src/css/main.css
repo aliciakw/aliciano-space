@@ -1,6 +1,44 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,500,700');
 @import url('lightbox.css');
 
+/* Typography */
+h1 {
+  font-size: 2.5em;
+  margin-top: 54px;
+  margin-bottom: 0;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+h2 {
+  letter-spacing: 4px;
+  margin: 20px;
+}
+h3 {
+  text-transform: uppercase;
+  margin-top: 0;
+}
+footer h3 {
+  display: inline;
+  letter-spacing: 4px;
+  text-transform: none;
+  font-weight: normal;
+  vertical-align: super;
+  margin-left: 0;
+}
+h6 {
+  text-transform: uppercase;
+  margin: 0;
+}
+p {
+  font-size: .8em;
+}
+ul {
+  text-transform: uppercase;
+  list-style-type: none;
+  padding: 0 20px;
+}
+
+/* Layout */
 body {
   margin: 0;
   padding: 0;
@@ -12,6 +50,13 @@ header {
 .section-content {
   margin: 20px auto;
   max-width: 700px;
+}
+.eye-img img {
+  height: 60px;
+}
+.eye-img img {
+  width: 60px;
+  transition: width 1s;
 }
 #collections-nav-content {
   padding: 20px 0;
@@ -45,41 +90,6 @@ footer {
   box-sizing: border-box;
 }
 
-h1 {
-  font-size: 2.5em;
-  margin-top: 54px;
-  font-weight: bold;
-  letter-spacing: 5px;
-}
-h2 {
-  letter-spacing: 4px;
-  margin: 20px;
-}
-h3 {
-  text-transform: uppercase;
-  margin-top: 0;
-}
-footer h3 {
-  display: inline;
-  letter-spacing: 4px;
-  text-transform: none;
-  font-weight: normal;
-  vertical-align: super;
-  margin-left: 0;
-}
-h6 {
-  text-transform: uppercase;
-  margin: 0;
-}
-p {
-  font-size: .8em;
-}
-ul {
-  text-transform: uppercase;
-  list-style-type: none;
-  padding: 0 20px;
-}
-
 .blanket {
   background: rgba(0, 0, 0, .35);
   width: 100%;
@@ -99,6 +109,9 @@ ul {
 .right {
   text-align: right;
 }
+.hidden {
+  display: none;
+}
 .half-width-col {
   box-sizing: border-box;
   display: inline-block;
@@ -106,19 +119,8 @@ ul {
   width: 50%;
   padding: 2%;
 }
-@media (max-width: 750px) {
-  .half-width-col {
-    width: 100%;
-  }
-  #collections-nav-content {
-    padding: 0;
-  }
-}
 
-.hidden {
-  display: none;
-}
-
+/* CSS Animations */
 @-moz-keyframes spin {
   from { -moz-transform: rotate(0deg); }
   to { -moz-transform: rotate(360deg); }
@@ -135,4 +137,14 @@ ul {
   animation: spin 2500ms linear infinite;
   margin-left: 2%;
   width: 30px;
+}
+
+/* Mobile Styles */
+@media (max-width: 750px) {
+  .half-width-col {
+    width: 100%;
+  }
+  #collections-nav-content {
+    padding: 0;
+  }
 }
