@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "http-server",
     "build": "babel --presets=env src/scripts/main.js > src/scripts/tmp.js && node src/scripts/lib/r.js -o src/scripts/build.js && rm src/scripts/tmp.js",
-    "output": "cp src/scripts/require.js dist/scripts/require.js && cp src/index.html dist/index.html && cp -r src/css dist/css && cp -r src/img dist/img",
+    "output": "cp src/scripts/require.js dist/scripts/require.js && cp src/index.html dist/index.html && cp -r src/css dist && cp -r src/img dist",
     "build-public-site": "npm run build && npm run output"
   },
   "repository": {

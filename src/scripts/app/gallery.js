@@ -21,8 +21,9 @@ define(() => {
     if (typeof newImageIndex !== 'number') {
       newImageIndex = parseInt(getKeywordFromItemClicked($, event, 'goto-'), 10);
     }
-    const newPaintingFilename = galleryImages[newImageIndex].filename;
-    $('#lightbox-image').attr('src', 'img/works/' + newPaintingFilename);
+    const newPainting = galleryImages[newImageIndex];
+    $('#lightbox-image').attr('src', 'img/works/' + newPainting.filename);
+    $('.lightbox-caption').html('<p>'+ newPainting.title + ' - ' + newPainting.media + '. ' + newPainting.dimensions + '.</p>');
     $('.left-trigger').attr('id', 'goto-' + (newImageIndex - 1));
     $('.right-trigger').attr('id', 'goto-' + (newImageIndex + 1));
     return newImageIndex;
@@ -84,16 +85,16 @@ define(() => {
           if (event.keyCode == 27) { // esc key
             hideLightbox($);
           }
-          if (event.keyCode == 39) { // right arrow key
-            if (selectedImageIndex + 1 < galleryImages.length) {
-              selectedImageIndex = updateLightboxRight($, event, galleryImages, selectedImageIndex + 1);
-            }
-          }
-          if (selectedImageIndex > 0 && event.keyCode == 37) { // left arrow key
-            if (selectedImageIndex > 0) {
-              selectedImageIndex = updateLightboxLeft($, event, galleryImages, selectedImageIndex - 1);
-            }
-          }
+          // if (event.keyCode == 39) { // right arrow key
+          //   if (selectedImageIndex + 1 < galleryImages.length) {
+          //     selectedImageIndex = updateLightboxRight($, event, galleryImages, selectedImageIndex + 1);
+          //   }
+          // }
+          // if (selectedImageIndex > 0 && event.keyCode == 37) { // left arrow key
+          //   if (selectedImageIndex > 0) {
+          //     selectedImageIndex = updateLightboxLeft($, event, galleryImages, selectedImageIndex - 1);
+          //   }
+          // }
         });
       }
   };
