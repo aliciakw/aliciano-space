@@ -20,7 +20,11 @@
   },
   "homepage": "https://github.com/aliciakw/aliciano-space#readme",
   "dependencies": {
-    "requirejs": "^2.3.5"
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^2.1.5",
+    "requirejs": "^2.3.5",
+    "tailwindcss": "^1.1.4",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
