@@ -8,7 +8,7 @@ import linkResolver from './link-resolver'
 
 const Elements = prismicDOM.RichText.Elements
 
-export default function (type, element, content, children) {
+export default function (type, element, content, /*childre */) {
   // Generate links to Prismic Documents as <router-link> components
   // Present by default, it is recommended to keep this
   if (type === Elements.hyperlink) {

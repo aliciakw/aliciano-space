@@ -1,34 +1,47 @@
 {
-  "name": "public",
-  "version": "1.0.0",
-  "description": "Portfolio website built with requirejs",
-  "main": "index.js",
+  "name": "aliciano-space",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "http-server",
-    "build": "babel --presets=env src/scripts/main.js > src/scripts/tmp.js && node src/scripts/lib/r.js -o src/scripts/build.js && rm src/scripts/tmp.js",
-    "output": "cp src/scripts/require.js dist/scripts/require.js && cp src/index.html dist/index.html && cp -r src/css dist/css && cp -r src/img dist/img",
-    "build-public-site": "npm run build && npm run output"
+    "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve --mode=dev",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aliciakw/aliciano-space.git"
-  },
-  "author": "aliciakw",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/aliciakw/aliciano-space/issues"
-  },
-  "homepage": "https://github.com/aliciakw/aliciano-space#readme",
   "dependencies": {
+    "core-js": "^3.4.4",
     "dotenv": "^8.2.0",
     "prismic-dom": "^2.1.0",
     "prismic-javascript": "^2.1.5",
-    "requirejs": "^2.3.5",
-    "tailwindcss": "^1.1.4",
-    "vue": "^2.6.11"
+    "prismic-vue": "^2.0.0",
+    "vue": "^2.6.10",
+    "vue-mq": "^1.0.1"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
-  }
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-eslint": "^4.1.0",
+    "@vue/cli-service": "^4.1.0",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "rules": {},
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
