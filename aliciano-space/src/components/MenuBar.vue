@@ -25,7 +25,7 @@
     name: 'MenuBar',
     data() {
       return {
-        mobileCollapsed: false,
+        mobileCollapsed: true,
       }
     },
     computed: {
