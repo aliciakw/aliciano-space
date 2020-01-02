@@ -1,6 +1,9 @@
 <template>
   <div class="hello">
     <h2>Gallery for {{collection}}:</h2>
+    <div v-for="image in fields.images" v-bind:key="image.id">
+      <img v-bind:src="image.src" width="500"/>
+    </div>
   </div>
 </template>
 
@@ -26,6 +29,7 @@ export default {
   data() {
     return {
       documentId: '',
+      foo: 'baz',
       fields: {
         title: null,
         description: null,
@@ -40,6 +44,7 @@ export default {
     getContent() {
       this.$prismic.client.getByUID('collection', 'frontpage', { 'graphQuery': graphQuery })
         .then((document) => {
+          this.foo = 'bar';
           if (document && document.data && Array.isArray(document.data.image_links)) {
             const images = document.data.image_links.map(imageLink => {
               // eslint-disable-next-line
@@ -47,7 +52,7 @@ export default {
               return {
                 xCoordinate: imageLink.x_coordinate,
                 yCoordinate: imageLink.y_coordinate,
-                url: imageLink.image.data.image.url,
+                src: imageLink.image.data.image.url,
                 alt: imageLink.image.data.image.alt
               }
             });
