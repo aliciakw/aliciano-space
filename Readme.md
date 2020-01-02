@@ -1,20 +1,24 @@
-### A simple portfolio website
+# aliciano-space
 
-#### The problem
-Build a well-organized and easy to update single-page application to showcase my portfolio, in the most lightweight manner possible.
-* Support reusable pieces of code without resorting to the use of a javascript framework like Angular or React, which would have been overkill in this case
-* Support interactivity without cluttering the html with script tags or polluting the global scope with variables
-* Separation of concerns. Changes to content should be limited to updating a json file, to prevent bugs and make my life easier down the line.
-
-#### run locally
+## Project setup
 ```
 npm install
+```
+
+### Compiles and hot-reloads for development
+```
 npm run dev
 ```
 
-#### build the public site
-Compile the source code into the final static site:
+### Compiles and minifies for production
 ```
-npm run build-public-site
+npm run build
 ```
-Upload the contents of `dist/` to the web host.
+
+### Lints and fixes files
+```
+npm run lint
+```
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
