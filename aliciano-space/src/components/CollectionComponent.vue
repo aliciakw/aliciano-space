@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="CollectionWrapper">
     <ImageComponent
       v-for="image in fields.images"
       v-bind:key="image.id"
@@ -65,3 +65,11 @@ export default {
   }
 }
 </script>
+<style>
+  .CollectionWrapper {
+    overflow: scroll;
+    position: relative;
+    width: 100vw;
+    flex-grow: 1;
+  }
+</style>
