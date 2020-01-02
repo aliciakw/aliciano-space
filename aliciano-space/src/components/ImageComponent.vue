@@ -35,8 +35,7 @@
     left: var(--left);
     top: var(--top);
     width: 500px;
-    padding-top: 20px;
-    padding-bottom: 100px;
+    padding: 50px;
   }
   img {
     width: 100%;
