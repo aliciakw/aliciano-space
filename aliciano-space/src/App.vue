@@ -1,19 +1,19 @@
 <template>
   <div id="app">
-    <h1>alicia no</h1>
+    <!-- <h1>alicia no</h1> -->
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
 
-    <Gallery collection="Frontpage" />
+    <CollectionComponent collection="Frontpage" />
   </div>
 </template>
 
 <script>
-import Gallery from './components/Gallery.vue'
+import CollectionComponent from './components/CollectionComponent.vue'
 
 export default {
   name: 'app',
   components: {
-    Gallery
+    CollectionComponent
   }
 }
 </script>

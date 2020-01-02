@@ -1,13 +1,18 @@
 <template>
-  <div class="hello">
-    <h2>Gallery for {{collection}}:</h2>
-    <div v-for="image in fields.images" v-bind:key="image.id">
-      <img v-bind:src="image.src" width="500"/>
-    </div>
+  <div>
+    <ImageComponent
+      v-for="image in fields.images"
+      v-bind:key="image.id"
+      v-bind:src="image.src"
+      v-bind:alt="image.alt"
+      v-bind:left="image.xCoordinate"
+      v-bind:top="image.yCoordinate"
+    />
   </div>
 </template>
 
 <script>
+import ImageComponent from './ImageComponent.vue';
 const graphQuery = `{
   collection {
     title
@@ -22,14 +27,16 @@ const graphQuery = `{
   }
 }`;
 export default {
-  name: 'Gallery',
+  name: 'CollectionComponent',
+  components: {
+    ImageComponent
+  },
   props: {
     collection: String
   },
   data() {
     return {
       documentId: '',
-      foo: 'baz',
       fields: {
         title: null,
         description: null,
@@ -44,18 +51,13 @@ export default {
     getContent() {
       this.$prismic.client.getByUID('collection', 'frontpage', { 'graphQuery': graphQuery })
         .then((document) => {
-          this.foo = 'bar';
           if (document && document.data && Array.isArray(document.data.image_links)) {
-            const images = document.data.image_links.map(imageLink => {
-              // eslint-disable-next-line
-              console.log('*', imageLink.image.data.image);
-              return {
-                xCoordinate: imageLink.x_coordinate,
-                yCoordinate: imageLink.y_coordinate,
-                src: imageLink.image.data.image.url,
-                alt: imageLink.image.data.image.alt
-              }
-            });
+            const images = document.data.image_links.map(imageLink => ({
+              xCoordinate: imageLink.x_coordinate,
+              yCoordinate: imageLink.y_coordinate,
+              src: imageLink.image.data.image.url,
+              alt: imageLink.image.data.image.alt
+            }));
             this.fields.images = images;
           }
         });
