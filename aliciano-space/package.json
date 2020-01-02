@@ -4,11 +4,16 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
+    "dev": "vue-cli-service serve --mode=dev",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "core-js": "^3.4.4",
+    "dotenv": "^8.2.0",
+    "prismic-dom": "^2.1.0",
+    "prismic-javascript": "^2.1.5",
+    "prismic-vue": "^2.0.0",
     "vue": "^2.6.10"
   },
   "devDependencies": {
