@@ -15,6 +15,14 @@ npm run dev
 npm run build
 ```
 
+### Deployment
+Currently hosting this site with aws s3.
+```
+npm install -g s3-deploy
+// update ~/.aws/credentials with the correct credentials or profile
+npm run release
+```
+
 ### Lints and fixes files
 ```
 npm run lint

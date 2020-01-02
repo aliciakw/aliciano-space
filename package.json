@@ -6,6 +6,8 @@
     "serve": "vue-cli-service serve",
     "dev": "vue-cli-service serve --mode=dev",
     "build": "vue-cli-service build",
+    "deploy": "s3-deploy './dist/**' --cwd './dist/' --region us-east-1 --bucket alicia-no.space --profile=default",
+    "release": "npm run build && npm run deploy",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -24,6 +26,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "s3-deploy": "^1.4.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
