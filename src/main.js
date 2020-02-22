@@ -1,11 +1,19 @@
 import Vue from 'vue';
-import App from './App.vue';
+// import App from './App.vue';
 import PrismicVue from 'prismic-vue'
 import linkResolver from './prismic/link-resolver'
 import htmlSerializer from './prismic/html-serializer'
 import VueMq from 'vue-mq'
 
 require('dotenv').config();
+
+import HomePage from './components/HomePage.vue';
+import UnbrandingPage from './components/UnbrandingPage.vue';
+const NotFound = { template: '<p>Page not found</p>' }
+const routes = {
+  '/': HomePage,
+  '/unbranding': UnbrandingPage
+}
 
 Vue.use(PrismicVue, {
   // endpoint: window.prismic.endpoint,
@@ -25,6 +33,20 @@ Vue.use(VueMq, {
 
 Vue.config.productionTip = false;
 
+
+// new Vue({
+//   render: h => h(App),
+// }).$mount('#app');
+
 new Vue({
-  render: h => h(App),
-}).$mount('#app');
+  el: '#app',
+  data: {
+    currentRoute: window.location.pathname
+  },
+  computed: {
+    ViewComponent() {
+      return routes[this.currentRoute] || NotFound
+    }
+  },
+  render(h) { return h(this.ViewComponent) }
+})

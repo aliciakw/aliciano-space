@@ -14,7 +14,6 @@
     "core-js": "^3.4.4",
     "dotenv": "^8.2.0",
     "prismic-dom": "^2.1.0",
-    "prismic-javascript": "^2.1.5",
     "prismic-vue": "^2.0.0",
     "vue": "^2.6.10",
     "vue-mq": "^1.0.1"
@@ -26,6 +25,7 @@
     "babel-eslint": "^10.0.3",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "prismic-javascript": "^1.5.1",
     "s3-deploy": "^1.4.0",
     "vue-template-compiler": "^2.6.10"
   },
