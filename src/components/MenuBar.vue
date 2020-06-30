@@ -2,11 +2,14 @@
   <nav role="navigation" :style="cssVars">
     <h1 v-if="!mobileCollapsed || $mq !== 'mobile'">ALICIA NO</h1>
     <ul v-if="!mobileCollapsed || $mq !== 'mobile'">
-      <li class="MenuBar__menu-item">
-        <a target="_blank" href="https://www.instagram.com/noooo.art/">instagram</a>
+      <li>
+        <a class="Button--primary" v-on:click="onClickInfo">info</a>
       </li>
-      <li class="MenuBar__menu-item">
-        <a target="_blank" href="mailto:aliciayesorno@gmail.com">email</a>
+      <li>
+        <a class="Button--primary" target="_blank" href="https://www.instagram.com/noooo.art/">instagram</a>
+      </li>
+      <li>
+        <a class="Button--primary" target="_blank" href="https://motha-of-thousands.now.sh/">blog</a>
       </li>
       <li v-if="$mq === 'mobile'">
         <button v-on:click="toggleMobileCollapsed" class="MenuBar__nav-toggle MenuBar__nav-toggle__collapse" aria-label="hide navigation">
@@ -21,12 +24,30 @@
   </nav>
 </template>
 <script>
+  import { RichText } from 'prismic-dom'
+  const graphQuery = `{
+    textblock {
+      title
+      body
+      post_script
+    }
+  }`;
   export default {
     name: 'MenuBar',
+    props: {
+      setModalContent: Function,
+    },
     data() {
       return {
         mobileCollapsed: true,
+        infoContent: {
+          body: null,
+          postScript: null,
+        },
       }
+    },
+    created() {
+      this.getContent()
     },
     computed: {
       cssVars() {
@@ -38,9 +59,31 @@
       }
     },
     methods: {
+      getContent: function() {
+        // load info section
+        this.$prismic.client.getByUID('textblock', 'info', { 'graphQuery': graphQuery })
+          .then((document) => {
+            if (document && document.data && Array.isArray(document.data.body)) {
+              this.infoContent.body = document.data.body;
+            }
+            if (document && document.data && Array.isArray(document.data.post_script)) {
+              this.infoContent.postScript = document.data.post_script;
+            }
+          });
+      },
+      onClickInfo: function() {
+        if (!Array.isArray(this.infoContent.body)) {
+          console.log('[Error]: Invalid prismic entry for infoContent.body');
+          return;
+        }
+        const serializedBody = RichText.asHtml(this.infoContent.body);
+        const serializedPostScript = RichText.asHtml(this.infoContent.postScript);
+        this.setModalContent(serializedBody, serializedPostScript);
+        this.toggleMobileCollapsed();
+      },
       toggleMobileCollapsed: function () {
         this.mobileCollapsed = !this.mobileCollapsed;
-      }
+      } 
     }
   };
 </script>
@@ -89,26 +132,6 @@
   }
   ul li {
     margin: 1rem;
-  }
-  ul li a {
-    text-decoration: none;
-    color: #aaa;
-  }
-  ul li a:hover {
-    color: #222;
-  }
-
-  .MenuBar__menu-item:before {
-    content: "[";
-    position: relative;
-    left: -7px;
-    color: #aaa;
-  }
-  .MenuBar__menu-item:after {
-    content: "]";
-    position: relative;
-    left: 7px;
-    color: #aaa;
   }
 
   @media screen and (min-width: 450px) {
