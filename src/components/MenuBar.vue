@@ -4,8 +4,12 @@
     <ul v-if="!mobileCollapsed || $mq !== 'mobile'">
       <li>
         <a class="Button--primary" v-on:click="onClickInfo">info</a>
+      </li>
       <li>
         <a class="Button--primary" target="_blank" href="https://www.instagram.com/noooo.art/">instagram</a>
+      </li>
+      <li>
+        <a class="Button--primary" target="_blank" href="https://motha-of-thousands.now.sh/">blog</a>
       </li>
       <li v-if="$mq === 'mobile'">
         <button v-on:click="toggleMobileCollapsed" class="MenuBar__nav-toggle MenuBar__nav-toggle__collapse" aria-label="hide navigation">
