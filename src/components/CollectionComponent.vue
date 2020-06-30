@@ -67,9 +67,11 @@ export default {
 </script>
 <style>
   .CollectionWrapper {
-    overflow: scroll;
-    position: relative;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    position: absolute;
     width: 100vw;
+    height: 100%;
     flex-grow: 1;
   }
 </style>

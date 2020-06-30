@@ -53,6 +53,8 @@
     flex-grow: 0;
     height: var(--mobile-height);
     border-top: var(--mobile-border-top);
+    background: #fff;
+    z-index: 1;
   }
   h1 {
     display: flex;
@@ -65,6 +67,8 @@
     margin-bottom: 1rem;
     width: 100%;
     color: #aaa;
+    background: none;
+    border: none;
   }
   .MenuBar__nav-toggle__collapse {
     position: absolute;
