@@ -2,11 +2,10 @@
   <nav role="navigation" :style="cssVars">
     <h1 v-if="!mobileCollapsed || $mq !== 'mobile'">ALICIA NO</h1>
     <ul v-if="!mobileCollapsed || $mq !== 'mobile'">
-      <li class="MenuBar__menu-item">
-        <a target="_blank" href="https://www.instagram.com/noooo.art/">instagram</a>
-      </li>
-      <li class="MenuBar__menu-item">
-        <a target="_blank" href="mailto:aliciayesorno@gmail.com">email</a>
+      <li>
+        <a class="Button--primary" v-on:click="onClickInfo">info</a>
+      <li>
+        <a class="Button--primary" target="_blank" href="https://www.instagram.com/noooo.art/">instagram</a>
       </li>
       <li v-if="$mq === 'mobile'">
         <button v-on:click="toggleMobileCollapsed" class="MenuBar__nav-toggle MenuBar__nav-toggle__collapse" aria-label="hide navigation">
@@ -21,8 +20,34 @@
   </nav>
 </template>
 <script>
+  const INFO_HTML = `
+    <p>
+      Hello traveler, thanks for visiting my site. 
+    </p>
+    <p> 
+      Feel free to check out whichever virtual gallery(s) I might have up at the moment. I'll try to change 
+      them out regularly, but no promises.
+    </p>
+
+    <p>
+      Lately I've been making things about alienation and landscape. I worry a lot about how big the world is
+      and how easy it is to get lost in the a web of arbitrary connections. I worry that becoming an android
+      is destroying the human way of seeing buried deep in my lizard brain. Waiting for the comet to hit, here's
+      left of what I can see.
+    </p>
+
+    <p>
+      I'm currently located in Burlington, VT, but I'm from the Washington, D.C. area.
+    </p>
+    <p>
+      For inquiries or to chat about anything, find me on the 'gram @nooo.art or email me at aliciayesorno@gmail.com!
+    </p>
+  `;
   export default {
     name: 'MenuBar',
+    props: {
+      setModalContent: Function,
+    },
     data() {
       return {
         mobileCollapsed: true,
@@ -40,6 +65,9 @@
     methods: {
       toggleMobileCollapsed: function () {
         this.mobileCollapsed = !this.mobileCollapsed;
+      },
+      onClickInfo: function() {
+        this.setModalContent(INFO_HTML);
       }
     }
   };
@@ -89,26 +117,6 @@
   }
   ul li {
     margin: 1rem;
-  }
-  ul li a {
-    text-decoration: none;
-    color: #aaa;
-  }
-  ul li a:hover {
-    color: #222;
-  }
-
-  .MenuBar__menu-item:before {
-    content: "[";
-    position: relative;
-    left: -7px;
-    color: #aaa;
-  }
-  .MenuBar__menu-item:after {
-    content: "]";
-    position: relative;
-    left: 7px;
-    color: #aaa;
   }
 
   @media screen and (min-width: 450px) {

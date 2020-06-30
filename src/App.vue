@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <MenuBar />
+    <ModalComponent v-bind:content="modalContent" v-bind:onClose="clearModalContent" />
+    <MenuBar v-bind:setModalContent="setModalContent" />
     <CollectionComponent collection="Frontpage" />
   </div>
 </template>
@@ -8,12 +9,27 @@
 <script>
 import CollectionComponent from './components/CollectionComponent.vue'
 import MenuBar from './components/MenuBar.vue'
+import ModalComponent from './components/ModalComponent.vue'
 
 export default {
   name: 'app',
   components: {
     CollectionComponent,
-    MenuBar
+    MenuBar,
+    ModalComponent
+  },
+  data() {
+    return {
+      modalContent: '',
+    }
+  },
+  methods: {
+    setModalContent: function (modalContent) {
+      this.modalContent = modalContent;
+    },
+    clearModalContent: function() {
+      this.modalContent = '';
+    }
   }
 }
 </script>
