@@ -79,6 +79,7 @@
         const serializedBody = RichText.asHtml(this.infoContent.body);
         const serializedPostScript = RichText.asHtml(this.infoContent.postScript);
         this.setModalContent(serializedBody, serializedPostScript);
+        this.toggleMobileCollapsed();
       },
       toggleMobileCollapsed: function () {
         this.mobileCollapsed = !this.mobileCollapsed;
