@@ -20,6 +20,13 @@
   </nav>
 </template>
 <script>
+  const graphQuery = `{
+    textblock {
+      title
+      body
+      post_script
+    }
+  }`;
   const INFO_HTML = `
     <p>
       Hello traveler, thanks for visiting my site. 
@@ -51,7 +58,14 @@
     data() {
       return {
         mobileCollapsed: true,
+        infoContent: {
+          body: null,
+          postScript: null,
+        },
       }
+    },
+    created() {
+      this.getContent()
     },
     computed: {
       cssVars() {
@@ -63,12 +77,24 @@
       }
     },
     methods: {
-      toggleMobileCollapsed: function () {
-        this.mobileCollapsed = !this.mobileCollapsed;
+      getContent: function() {
+        // load info section
+        this.$prismic.client.getByUID('textblock', 'info', { 'graphQuery': graphQuery })
+          .then((document) => {
+            if (document && document.data && Array.isArray(document.data.body)) {
+              this.infoContent.body = document.data.body;
+            }
+            if (document && document.data && Array.isArray(document.data.post_script)) {
+              this.infoContent.postScript = document.data.post_script;
+            }
+          });
       },
       onClickInfo: function() {
         this.setModalContent(INFO_HTML);
-      }
+      },
+      toggleMobileCollapsed: function () {
+        this.mobileCollapsed = !this.mobileCollapsed;
+      } 
     }
   };
 </script>

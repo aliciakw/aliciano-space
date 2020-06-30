@@ -6,7 +6,7 @@
         close
       </button>
     </div>
-    <div class="Modal__body py1" v-html="content"></div>
+    <div class="Modal__body p1" v-html="content"></div>
   </div>
 </template>
 
