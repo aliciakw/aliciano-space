@@ -2,10 +2,10 @@
   <nav role="navigation" :style="cssVars">
     <h1 v-if="!mobileCollapsed || $mq !== 'mobile'">ALICIA NO</h1>
     <ul v-if="!mobileCollapsed || $mq !== 'mobile'">
-      <li>
-        <a target="_blank" href="https://www.instagram.com/lili_3thousand/">insta</a>
+      <li class="MenuBar__menu-item">
+        <a target="_blank" href="https://www.instagram.com/noooo.art/">instagram</a>
       </li>
-      <li>
+      <li class="MenuBar__menu-item">
         <a target="_blank" href="mailto:aliciayesorno@gmail.com">email</a>
       </li>
       <li v-if="$mq === 'mobile'">
@@ -61,6 +61,9 @@
     align-self: flex-start;
     justify-content: center;
     margin: 1rem auto 0 auto;
+    color: #aaa;
+    font-weight: normal;
+    font-size: 2rem;
   }
   .MenuBar__nav-toggle {
     font-size: 3rem;
@@ -95,6 +98,19 @@
     color: #222;
   }
 
+  .MenuBar__menu-item:before {
+    content: "[";
+    position: relative;
+    left: -7px;
+    color: #aaa;
+  }
+  .MenuBar__menu-item:after {
+    content: "]";
+    position: relative;
+    left: 7px;
+    color: #aaa;
+  }
+
   @media screen and (min-width: 450px) {
     nav {
       flex-direction: row;
@@ -105,6 +121,7 @@
     h1 {
       align-self: center;
       margin: 0 0 0 1rem;
+      font-size: 1.5rem;
     }
     ul {
       flex-direction: row;
@@ -116,12 +133,6 @@
     ul li {
       margin: 1rem;
     }
-    ul li:before {
-      content: "*";
-      position: relative;
-      left: -7px;
-      bottom: -3px;
-      color: #aaa;
-    }
+    
   }
 </style>
