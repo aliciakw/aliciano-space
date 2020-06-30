@@ -24,6 +24,7 @@
   </nav>
 </template>
 <script>
+  import { RichText } from 'prismic-dom'
   const graphQuery = `{
     textblock {
       title
@@ -31,29 +32,6 @@
       post_script
     }
   }`;
-  const INFO_HTML = `
-    <p>
-      Hello traveler, thanks for visiting my site. 
-    </p>
-    <p> 
-      Feel free to check out whichever virtual gallery(s) I might have up at the moment. I'll try to change 
-      them out regularly, but no promises.
-    </p>
-
-    <p>
-      Lately I've been making things about alienation and landscape. I worry a lot about how big the world is
-      and how easy it is to get lost in the a web of arbitrary connections. I worry that becoming an android
-      is destroying the human way of seeing buried deep in my lizard brain. Waiting for the comet to hit, here's
-      left of what I can see.
-    </p>
-
-    <p>
-      I'm currently located in Burlington, VT, but I'm from the Washington, D.C. area.
-    </p>
-    <p>
-      For inquiries or to chat about anything, find me on the 'gram @nooo.art or email me at aliciayesorno@gmail.com!
-    </p>
-  `;
   export default {
     name: 'MenuBar',
     props: {
@@ -94,7 +72,13 @@
           });
       },
       onClickInfo: function() {
-        this.setModalContent(INFO_HTML);
+        if (!Array.isArray(this.infoContent.body)) {
+          console.log('[Error]: Invalid prismic entry for infoContent.body');
+          return;
+        }
+        const serializedBody = RichText.asHtml(this.infoContent.body);
+        const serializedPostScript = RichText.asHtml(this.infoContent.postScript);
+        this.setModalContent(serializedBody, serializedPostScript);
       },
       toggleMobileCollapsed: function () {
         this.mobileCollapsed = !this.mobileCollapsed;

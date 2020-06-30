@@ -1,12 +1,15 @@
 <template>
 
-  <div v-if="content" class="Modal p1">
+  <div v-if="body" class="Modal p1">
     <div class="Modal__header text-right mr1">
       <button class="Button--primary" v-on:click="onClose">
         close
       </button>
     </div>
-    <div class="Modal__body p1" v-html="content"></div>
+    <div class="p1">
+      <div class="text-left" v-html="body"></div>
+      <div v-if="postScript" class="mt2 mr1 text-right" v-html="postScript"></div>
+    </div>
   </div>
 </template>
 
@@ -14,7 +17,8 @@
   export default {
     name: 'ModalComponent',
     props: {
-      content: String,
+      body: String,
+      postScript: String,
       onClose: Function,
     },
     data() {

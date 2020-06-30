@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <ModalComponent v-bind:content="modalContent" v-bind:onClose="clearModalContent" />
+    <ModalComponent v-bind:body="modalContent.body" v-bind:postScript="modalContent.postScript" v-bind:onClose="clearModalContent" />
     <MenuBar v-bind:setModalContent="setModalContent" />
     <CollectionComponent collection="Frontpage" />
   </div>
@@ -20,12 +20,15 @@ export default {
   },
   data() {
     return {
-      modalContent: '',
+      modalContent: {
+        body: '',
+        postScript: ''
+      },
     }
   },
   methods: {
-    setModalContent: function (modalContent) {
-      this.modalContent = modalContent;
+    setModalContent: function (body, postScript) {
+      this.modalContent = { body, postScript };
     },
     clearModalContent: function() {
       this.modalContent = '';
