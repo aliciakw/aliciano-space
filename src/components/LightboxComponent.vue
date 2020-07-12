@@ -1,5 +1,5 @@
 <template>
-  <div v-if="src" class="Lightbox">
+  <div v-if="src" class="Lightbox position-fixed">
    <p>LIGHTBOX</p>
   </div>
 </template>
@@ -22,7 +22,6 @@
   .Lightbox {
     border: 1px solid #ccc;
     background: #fff;
-    position: fixed;
     z-index: 10;
     top: 0;
     left: 0;

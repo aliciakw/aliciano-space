@@ -1,7 +1,9 @@
 <template>
   <div class="ImageComponent text-left" :style="cssVars">
-    <img v-bind:src="src" v-on:click="openLightbox" />
-    <div class="ImageComponent__plaque p_5">
+    <div class="ImageComponent__image-wrapper position-relative">
+      <img v-bind:src="src" v-on:click="openLightbox" />
+    </div>
+    <div class="ImageComponent__plaque p_5" v-on:click="openLightbox">
       <p class="detail">
         <strong>{{title}}</strong>
       <p>
@@ -62,31 +64,47 @@
 </script>
 <style scoped>
   .ImageComponent {
-    /* position: absolute;
-    left: var(--left);
-    top: var(--top); */
     width: 500px;
-    padding: 50px;
+    padding-right: 10rem;
   }
   img {
     width: 100%;
-    border-width: 0;
-    border-style: solid;
-    border-color: var(--border-color);
-    transition: border-width 0.2s ease-in-out;
+  }
+
+  .ImageComponent__image-wrapper::after {
+    content: "";
+    width: 500px;
+    left: 0;
+    top: 0;
+    height: calc(100% - 10px);
+    background-color: var(--border-color);
+    font-weight: bold;
+    position: absolute;
+    z-index: -1;
+    transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+    clip-path: polygon(0 0, calc(100% - 50px) 0%, 100% 10%, 100% 100%, 10% 100%, 0% calc(100% - 50px));
+  }
+
+  .ImageComponent:hover .ImageComponent__image-wrapper::after {
+    width: 550px;
+    height: calc(100% + 45px);
   }
 
   img:hover {
     cursor: pointer;
-    border-width: 0 3rem 3rem 0;
   }
 
   .ImageComponent__plaque {
     display: inline-block;
     width: 10rem;
-    opacity: 0.5;
+    opacity: 0.7;
+    background: #fff;
+    color: #333;
   }
   
+  .ImageComponent__plaque:hover {
+    cursor: pointer;
+  }
 
 
 </style>

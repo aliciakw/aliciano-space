@@ -82,12 +82,11 @@ export default {
 </script>
 <style>
   .CollectionWrapper {
-    /* overflow-x: scroll;
-    overflow-y: hidden; */
-    /* position: absolute; */
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-gap: 5rem;
+    grid-gap: 4rem;
+    padding: 4rem;
+    margin-right: 4rem;
     width: 100vw;
     height: 100%;
     flex-grow: 1;

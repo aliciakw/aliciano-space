@@ -1,6 +1,6 @@
 <template>
-  <nav role="navigation" :style="cssVars">
-    <h1 v-if="!mobileCollapsed || $mq !== 'mobile'">ALICIA NO</h1>
+  <nav class="position-fixed display-flex w100" role="navigation" :style="cssVars">
+    <h1 class="display-flex" v-if="!mobileCollapsed || $mq !== 'mobile'">ALICIA NO</h1>
     <ul v-if="!mobileCollapsed || $mq !== 'mobile'">
       <li>
         <a class="Button--primary" v-on:click="onClickInfo">info</a>
