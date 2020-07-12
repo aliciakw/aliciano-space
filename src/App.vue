@@ -11,6 +11,9 @@ import CollectionComponent from './components/CollectionComponent.vue'
 import MenuBar from './components/MenuBar.vue'
 import ModalComponent from './components/ModalComponent.vue'
 
+const ESCAPE = 'Escape';
+const EDGE_ESCAPE = 'Esc';
+
 export default {
   name: 'app',
   components: {
@@ -33,6 +36,13 @@ export default {
     clearModalContent: function() {
       this.modalContent = '';
     }
+  },
+  mounted() {
+    window.addEventListener("keydown", e => {
+      if (e.key === ESCAPE || e.key === EDGE_ESCAPE) {
+        this.clearModalContent();
+      }
+    });
   }
 }
 </script>
