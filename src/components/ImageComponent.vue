@@ -1,6 +1,15 @@
 <template>
-  <div :style="cssVars" v-on:click="openLightbox">
-    <img v-bind:src="src" width="500"/>
+  <div class="ImageComponent text-left" :style="cssVars">
+    <img v-bind:src="src" v-on:click="openLightbox" />
+    <div class="ImageComponent__plaque p_5">
+      <p class="detail">
+        <strong>{{title}}</strong>
+      <p>
+      <p class="detail"> 
+        <em>{{medium}}, {{width}} x {{height}} inches.</em>
+        {{year}}
+      </p>
+    </div>
   </div>
 </template>
 
@@ -8,23 +17,33 @@
   export default {
     name: 'ImageComponent',
     props: {
-      src: String,
       alt: String,
+      borderColor: {
+        type: String,
+        default: 'pink',
+      },
+      height: Number,
       left: {
         type: Number,
         default: 0,
       },
+      medium: String,
+      setLightboxContent: Function,
+      src: String,
+      title: String,
       top: {
         type: Number,
         default: 0,
       },
-      setLightboxContent: Function,
+      width: Number,
+      year: Number,
     }, 
     computed: {
       cssVars() {
         return {
           '--left': this.left + 'px',
           '--top': this.top + 'px',
+          '--border-color': this.borderColor || 'pink',
         }
       }
     },
@@ -42,21 +61,32 @@
   }
 </script>
 <style scoped>
-  div {
-    position: absolute;
+  .ImageComponent {
+    /* position: absolute;
     left: var(--left);
-    top: var(--top);
+    top: var(--top); */
     width: 500px;
-    padding: 50px; 
-    box-sizing: content-box;
-    border: 1px solid white;
-  }
-  div:hover {
-    cursor: pointer;
-    border: 1px solid cadetblue;
-    
+    padding: 50px;
   }
   img {
     width: 100%;
+    border-width: 0;
+    border-style: solid;
+    border-color: var(--border-color);
+    transition: border-width 0.2s ease-in-out;
   }
+
+  img:hover {
+    cursor: pointer;
+    border-width: 0 3rem 3rem 0;
+  }
+
+  .ImageComponent__plaque {
+    display: inline-block;
+    width: 10rem;
+    opacity: 0.5;
+  }
+  
+
+
 </style>

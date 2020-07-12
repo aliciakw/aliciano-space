@@ -1,5 +1,4 @@
 <template>
-
   <div v-if="body" class="Modal p1">
     <div class="Modal__header text-right mr1">
       <button class="Button--primary" v-on:click="onClose">

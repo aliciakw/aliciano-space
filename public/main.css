@@ -3,6 +3,7 @@
 .text-left { text-align: left; }
 .text-center { text-align: center; }
 
+.p_5 { padding: 0.5rem; }
 .p1 { padding: 1rem; }
 .pr1 { padding-right: 1rem; }
 .pl1 { padding-left: 1rem; }
@@ -95,4 +96,15 @@ a:hover, a:focus, a:active {
   position: relative;
   left: 7px;
   color: #aaa;
+}
+
+p {
+  margin: 0;
+}
+
+.body {
+  font-size: 1rem;
+}
+.detail {
+  font-size: .85rem;
 }
