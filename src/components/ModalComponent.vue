@@ -21,11 +21,6 @@
       postScript: String,
       onClose: Function,
     },
-    data() {
-      return {
-        visible: true,
-      }
-    },
   }
 </script>
 <style>
