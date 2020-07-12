@@ -1,7 +1,7 @@
 <template>
   <div class="ImageComponent text-left" :style="cssVars">
     <div class="ImageComponent__image-wrapper position-relative">
-      <img v-bind:src="src" v-on:click="openLightbox" />
+      <img v-bind:src="src" v-bind:alt="alt" v-on:click="openLightbox" />
     </div>
     <div class="ImageComponent__plaque p_5" v-on:click="openLightbox">
       <p class="detail">
