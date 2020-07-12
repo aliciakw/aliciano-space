@@ -7,6 +7,7 @@
       v-bind:alt="image.alt"
       v-bind:left="image.xCoordinate"
       v-bind:top="image.yCoordinate"
+      v-bind:setLightboxContent="setLightboxContent"
     />
   </div>
 </template>
@@ -32,7 +33,8 @@ export default {
     ImageComponent
   },
   props: {
-    collection: String
+    collection: String,
+    setLightboxContent: Function,
   },
   data() {
     return {

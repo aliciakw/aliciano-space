@@ -14,7 +14,7 @@
       v-bind:onClose="clearLightboxContent"
     />
     <MenuBar v-bind:setModalContent="setModalContent" />
-    <CollectionComponent collection="Frontpage" />
+    <CollectionComponent collection="Frontpage" v-bind:setLightboxContent="setLightboxContent" />
   </div>
 </template>
 

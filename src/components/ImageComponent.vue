@@ -1,5 +1,5 @@
 <template>
-  <div :style="cssVars">
+  <div :style="cssVars" v-on:click="openLightbox">
     <img v-bind:src="src" width="500"/>
   </div>
 </template>
@@ -17,7 +17,8 @@
       top: {
         type: Number,
         default: 0,
-      }
+      },
+      setLightboxContent: Function,
     }, 
     computed: {
       cssVars() {
@@ -27,6 +28,17 @@
         }
       }
     },
+    methods: {
+      openLightbox: function() {
+        this.setLightboxContent(
+          this.src,
+          'medium',
+          1999,
+          0,
+          0
+        );
+      }
+    }
   }
 </script>
 <style scoped>
@@ -35,7 +47,14 @@
     left: var(--left);
     top: var(--top);
     width: 500px;
-    padding: 50px;
+    padding: 50px; 
+    box-sizing: content-box;
+    border: 1px solid white;
+  }
+  div:hover {
+    cursor: pointer;
+    border: 1px solid cadetblue;
+    
   }
   img {
     width: 100%;
