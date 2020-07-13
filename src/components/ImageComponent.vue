@@ -1,5 +1,5 @@
 <template>
-  <div class="ImageComponent text-left" :style="cssVars">
+  <div class="ImageComponent text-left mt2" :style="cssVars">
     <div class="ImageComponent__image-wrapper position-relative">
       <img v-bind:src="src" v-bind:alt="alt" v-on:click="openLightbox" />
     </div>
@@ -64,8 +64,7 @@
 </script>
 <style scoped>
   .ImageComponent {
-    width: 500px;
-    padding-right: 10rem;
+    width: auto;
   }
   img {
     width: 100%;
@@ -73,12 +72,11 @@
 
   .ImageComponent__image-wrapper::after {
     content: "";
-    width: 500px;
+    width: auto;
     left: 0;
     top: 0;
     height: calc(100% - 10px);
     background-color: var(--border-color);
-    font-weight: bold;
     position: absolute;
     z-index: -1;
     transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
@@ -86,12 +84,12 @@
   }
 
   .ImageComponent:hover .ImageComponent__image-wrapper::after {
-    width: 550px;
+    width: 100%;
     height: calc(100% + 45px);
   }
 
   img:hover {
-    cursor: pointer;
+    cursor: zoom-in;
   }
 
   .ImageComponent__plaque {
@@ -103,7 +101,21 @@
   }
   
   .ImageComponent__plaque:hover {
-    cursor: pointer;
+    cursor: zoom-in;
+  }
+
+  @media screen and (min-width: 450px) {
+    .ImageComponent {
+      width: 500px;
+      padding-right: 10rem;
+    }
+    .ImageComponent__image-wrapper::after {
+      width: 500px;
+    }
+    .ImageComponent:hover .ImageComponent__image-wrapper::after {
+      width: 550px;
+      height: calc(100% + 45px);
+    }
   }
 
 

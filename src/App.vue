@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div id="app" class="flex flex-1 text-center">
+    <MenuBar v-bind:setModalContent="setModalContent" />
     <ModalComponent
       v-bind:body="modalContent.body"
       v-bind:postScript="modalContent.postScript"
@@ -13,8 +14,9 @@
       v-bind:height="lightboxContent.height"
       v-bind:onClose="clearLightboxContent"
     />
-    <MenuBar v-bind:setModalContent="setModalContent" />
-    <CollectionComponent collection="Frontpage" v-bind:setLightboxContent="setLightboxContent" />
+    <div class="App__body flex align-center justify-center pt_5 px_5">
+      <CollectionComponent collection="Frontpage" v-bind:setLightboxContent="setLightboxContent" />
+    </div>
   </div>
 </template>
 
@@ -92,15 +94,21 @@ export default {
 body {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex: 1;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  display: flex;
-  flex-direction: column-reverse;
-  height: 100vh;
-  width: 100vw;
+}
+.App__body {
+  min-height: 100vh;
+}
+
+@media() {
+  .App__body {
+    padding: 4rem;
+  }
 }
 </style>

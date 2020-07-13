@@ -7,10 +7,13 @@
 .position-relative { position: relative; }
 .position-fixed { position: fixed; }
 
-.display-flex { display: flex }
+.flex { display: flex }
+.flex-1 { flex: 1; }
 .flex-row { flex-direction: row; }
 .flex-col { flex-direction: column; }
+.flex-col-reverse { flex-direction: column-reverse; }
 .justify-center { justify-content: center; }
+.justify-between { justify-content: space-between; }
 .align-start { align-items: flex-start; }
 .align-center { align-items: center; }
 .align-end { align-items: flex-end; }
@@ -56,6 +59,19 @@
 .py2 { 
   padding-top: 2rem;
   padding-bottom: 2rem;
+}
+.p4 { padding: 4rem; }
+.pr4 { padding-right: 4rem; }
+.pl4 { padding-left: 4rem; }
+.pt4 { padding-top: 4rem; }
+.pb4 { padding-bottom: 4rem; }
+.px4 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.py4 {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .m_5 { margin: 0.5rem; }
@@ -136,6 +152,16 @@ a:hover, a:focus, a:active {
   color: #aaa;
 }
 
+.cursor-zoom-out:hover {
+  cursor: zoom-out;
+}
+
+.heading {
+  font-size: 1.25rem;
+}
+.subheading {
+  font-size: 1.5rem;
+}
 .body {
   font-size: 1rem;
 }
@@ -143,11 +169,32 @@ a:hover, a:focus, a:active {
   font-size: .85rem;
 }
 
+@media screen and (min-width: 450px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+  .subheading {
+    font-size: 1.5rem;
+  }
+  .body {
+    font-size: 1rem;
+  }
+  .detail {
+    font-size: .85rem;
+  }
+}
 
 
 /* Resets */
 
-p, img, div {
+p, img, div, ul, h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
+  font-weight: normal;
 }
+
+/* Color */
+.color-gray { color: #aaa; }
+
+
+.bg-white { background: #fff; }

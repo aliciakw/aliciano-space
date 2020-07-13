@@ -50,8 +50,8 @@
   @media screen and (min-width: 450px) {
     .Modal {
       top: 5rem;
-      left: auto;
-      right: 5rem;
+      left: calc(50% - 15rem);
+      right: auto;
       width: 30rem;
     }
   }

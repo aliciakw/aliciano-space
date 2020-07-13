@@ -1,5 +1,5 @@
 <template>
-  <div class="CollectionWrapper">
+  <div class="CollectionWrapper flex flex-col align-center">
     <ImageComponent
       v-for="image in fields.images"
       v-bind:key="image.id"
@@ -82,13 +82,11 @@ export default {
 </script>
 <style>
   .CollectionWrapper {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    grid-gap: 4rem;
-    padding: 4rem;
-    margin-right: 4rem;
-    width: 100vw;
-    height: 100%;
-    flex-grow: 1;
+  }
+
+  @media screen and (min-width: 450px) {
+    .CollectionWrapper {
+      flex-direction: row;
+    }
   }
 </style>
