@@ -1,26 +1,25 @@
 <template>
-  <nav role="navigation" :style="cssVars">
-    <h1 v-if="!mobileCollapsed || $mq !== 'mobile'">ALICIA NO</h1>
-    <ul v-if="!mobileCollapsed || $mq !== 'mobile'">
-      <li>
+  <nav class="MenuBar position-fixed bg-white flex align-center p_5" role="navigation" :style="cssVars">
+
+    <div class="MenuBar__header flex w100 align-center flex-row justify-between">
+      <h1 class="heading color-gray">ALICIA NO ART</h1>
+      <button v-if="$mq === 'mobile'" v-on:click="toggleMobileCollapsed" class="MenuBar__nav-toggle color-gray" aria-label="show navigation">
+        <span v-if="mobileCollapsed">=</span>
+        <span v-else>x</span>
+      </button>
+    </div>
+
+    <ul class="heading flex flex-col py4" v-if="!mobileCollapsed || $mq !== 'mobile'">
+      <li class="m1">
         <a class="Button--primary" v-on:click="onClickInfo">info</a>
       </li>
-      <li>
+      <li class="m1">
         <a class="Button--primary" target="_blank" href="https://www.instagram.com/noooo.art/">instagram</a>
       </li>
-      <li>
+      <li class="m1">
         <a class="Button--primary" target="_blank" href="https://motha-of-thousands.now.sh/">blog</a>
       </li>
-      <li v-if="$mq === 'mobile'">
-        <button v-on:click="toggleMobileCollapsed" class="MenuBar__nav-toggle MenuBar__nav-toggle__collapse" aria-label="hide navigation">
-          &ndash;
-        </button>
-      </li>
     </ul>
-
-    <button v-else v-on:click="toggleMobileCollapsed" class="MenuBar__nav-toggle" aria-label="show navigation">
-      +
-    </button>
   </nav>
 </template>
 <script>
@@ -52,8 +51,9 @@
     computed: {
       cssVars() {
         return {
-          '--mobile-height': this.mobileCollapsed ? '4.5rem' : '100vh',
+          '--mobile-height': this.mobileCollapsed ? 'auto' : '100vh',
           '--mobile-direction': this.mobileCollapsed ? 'row' : 'column',
+          '--mobile-justify': this.mobileCollapsed ? 'space-between' : 'flex-start',
           '--mobile-border-top': this.mobileCollapsed ? '1px solid #ccc' : 'none'
         }
       }
@@ -88,63 +88,43 @@
   };
 </script>
 <style scoped>
-  nav {
-    display: flex;
-    flex-direction: var(--mobile-direction);
-    justify-content: center;
-    align-items: center;
-    flex-grow: 0;
-    height: var(--mobile-height);
-    border-top: var(--mobile-border-top);
+  .MenuBar {
     background: #fff;
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 1;
+    flex-direction: var(--mobile-direction);
+    justify-content: var(--mobile-justify);
   }
-  h1 {
-    display: flex;
-    align-self: flex-start;
-    justify-content: center;
-    margin: 1rem auto 0 auto;
-    color: #aaa;
-    font-weight: normal;
-    font-size: 2rem;
+
+  .MenuBar__header {
+    height: 3rem;
   }
+
   .MenuBar__nav-toggle {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    color: #aaa;
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    width: 2.5rem;
+    font-size: 2rem;
     background: none;
     border: none;
   }
   .MenuBar__nav-toggle__collapse {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    flex-direction: row;
   }
   ul {
     list-style: none;
-    display: flex;
-    flex-grow: 1;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0;
-    font-size: 2rem;
-  }
-  ul li {
-    margin: 1rem;
   }
 
   @media screen and (min-width: 450px) {
-    nav {
-      flex-direction: row;
-      justify-content: flex-end;
+    .MenuBar {
       height: 3rem;
       border-top: 1px solid #ccc;
+      flex-direction: row;
+      justify-content: space-between;
     }
     h1 {
       align-self: center;
-      margin: 0 0 0 1rem;
-      font-size: 1.5rem;
     }
     ul {
       flex-direction: row;

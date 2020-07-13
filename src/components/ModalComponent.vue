@@ -1,6 +1,5 @@
 <template>
-
-  <div v-if="body" class="Modal p1">
+  <div v-if="body" class="Modal p1 position-fixed">
     <div class="Modal__header text-right mr1">
       <button class="Button--primary" v-on:click="onClose">
         close
@@ -21,18 +20,12 @@
       postScript: String,
       onClose: Function,
     },
-    data() {
-      return {
-        visible: true,
-      }
-    },
   }
 </script>
 <style>
   .Modal {
     border: 1px solid #ccc;
     background: #fff;
-    position: fixed;
     z-index: 10;
     top: 0;
     left: 0;
@@ -57,8 +50,8 @@
   @media screen and (min-width: 450px) {
     .Modal {
       top: 5rem;
-      left: auto;
-      right: 5rem;
+      left: calc(50% - 15rem);
+      right: auto;
       width: 30rem;
     }
   }
