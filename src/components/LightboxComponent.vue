@@ -5,16 +5,21 @@
         close
       </button>
     </div>
-    <div class="Lightbox__body flex justify-center align-center mt_5 h100 ">
+    <GentleLoader v-bind:preloadContent="preloadImage" v-bind:classNames="lightboxBodyClassnames">
       <img class="Lightbox__img cursor-zoom-out" v-bind:src="src" v-bind:alt="alt" v-on:click="onClose" />
-    </div>
+    </GentleLoader>
   </div>
 </template>
 
 <script>
+  import GentleLoader from './GentleLoader';
   export default {
     name: 'LightboxComponent',
+    components: {
+      GentleLoader
+    },
     props: {
+      alt: String,
       src: String,
       medium: String,
       year: Number,
@@ -22,6 +27,21 @@
       height: Number,
       onClose: Function,
     },
+    data() {
+      return {
+        lightboxBodyClassnames: 'Lightbox__body flex justify-center align-center h100'
+      }
+    },
+    methods: {
+      preloadImage: function(didLoad) {
+        if (this.src) {
+          const loader = new window.Image();
+          loader.src = '';
+          loader.onload = didLoad;
+          loader.src = this.src;
+        }
+      },
+    }
   }
 </script>
 
