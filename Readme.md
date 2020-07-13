@@ -16,6 +16,9 @@ npm run build
 ```
 
 ### Deployment
+Before deploy, checkout the staging link
+https://aliciano-space.vercel.app/
+
 Currently hosting this site with aws s3.
 ```
 npm install -g s3-deploy
