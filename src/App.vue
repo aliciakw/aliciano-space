@@ -7,6 +7,7 @@
       v-bind:onClose="clearModalContent"
     />
     <LightboxComponent
+      v-bind:alt="lightboxContent.alt"
       v-bind:src="lightboxContent.src"
       v-bind:medium="lightboxContent.medium"
       v-bind:year="lightboxContent.year"
@@ -33,6 +34,7 @@ const DEFAULT_MODAL_CONTENT = {
   postScript: ''
 };
 const DEFAULT_LIGHTBOX_CONTENT = {
+  alt: '',
   src: '',
   medium: '',
   year: 0,
@@ -55,11 +57,9 @@ export default {
     }
   },
   methods: {
-    setLightboxContent: function (src, medium, year, width, height) {
+    setLightboxContent: function (newLightboxContent) {
       this.closeAllOverlays();
-      this.lightboxContent = {
-        src, medium, year, width, height
-      };
+      this.lightboxContent = newLightboxContent;
     },
     clearLightboxContent: function () {
       if (this.lightboxContent !== DEFAULT_LIGHTBOX_CONTENT) {

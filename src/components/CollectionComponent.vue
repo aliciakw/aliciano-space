@@ -1,6 +1,6 @@
 <template>
   <div class="CollectionWrapper flex flex-col align-center">
-    <ImageComponent
+    <CollectionItem
       v-for="image in fields.images"
       v-bind:key="image.id"
       v-bind:alt="image.alt"
@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import ImageComponent from './ImageComponent.vue';
+import CollectionItem from './CollectionItem.vue';
 const graphQuery = `{
   collection {
     title
@@ -37,7 +37,7 @@ const graphQuery = `{
 export default {
   name: 'CollectionComponent',
   components: {
-    ImageComponent
+    CollectionItem
   },
   props: {
     collection: String,
