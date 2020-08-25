@@ -2,7 +2,7 @@
   <nav class="MenuBar position-fixed bg-white flex align-center p_5" role="navigation" :style="cssVars">
 
     <div class="MenuBar__header flex w100 align-center flex-row justify-between">
-      <h1 class="heading color-gray">ALICIA NO ART</h1>
+      <h1 class="heading color-gray sr-only">ALICIA NO ART</h1>
       <button v-if="$mq === 'mobile'" v-on:click="toggleMobileCollapsed" class="MenuBar__nav-toggle color-gray" aria-label="show navigation">
         <span v-if="mobileCollapsed">=</span>
         <span v-else>x</span>
